@@ -1,0 +1,123 @@
+body {
+    width: 100%;
+    height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h5,
+p {
+    color: #444;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    background-color: #fefefe;
+    padding: 0 5%;
+}
+
+
+/* Main Navigation Styling */
+
+nav,
+header {
+    background-color: #363638;
+}
+
+.nav {
+    margin-top: 1em;
+}
+
+nav .logo {
+    width: 40px;
+}
+
+.nav-link {
+    color: #fefefe;
+}
+
+.nav-link:hover {
+    color: #EDB020;
+}
+
+.nav-item,
+.nav-link {
+    width: 100%;
+    text-align: right;
+    display: block;
+    clear: both;
+    padding-top: .5em;
+}
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(237, 176, 32)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.custom-toggler,
+.custom-toggler:active,
+.custom-toggler:focus {
+    border: 0px!important;
+    outline: 0px!important;
+    box-shadow: 0px!important;
+}
+
+
+/* Main Content */
+
+main {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 5em;
+}
+
+
+/* Footer */
+
+footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    padding: .75em 0;
+    background-color: #363638;
+    color: #a9a9a9;
+}
+
+
+/* Small devices (landscape phones, 576px and up) */
+
+@media (min-width: 576px) {}
+
+
+/* Medium devices (tablets, 768px and up) */
+
+@media (min-width: 768px) {}
+
+
+/* Large devices (desktops, 992px and up) */
+
+@media (min-width: 992px) {
+    .nav-item,
+    .nav-link {
+        width: auto;
+        padding-top: 0;
+        display: inline-block;
+    }
+}
+
+
+/* Extra large devices (large desktops, 1200px and up) */
+
+@media (min-width: 1200px) {
+    .nav-item,
+    .nav-link {
+        width: auto;
+        text-align: right;
+        padding-top: 0;
+    }
+}
