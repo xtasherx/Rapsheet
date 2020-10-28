@@ -1,6 +1,9 @@
 body {
     width: 100%;
     height: auto;
+    background-color: #fefefe;
+    font-size: 16px;
+    line-height: 1.5em;
 }
 
 h1,
@@ -18,7 +21,7 @@ header {
     position: fixed;
     top: 0;
     z-index: 10;
-    background-color: #fefefe;
+    /* background-color: #fefefe; */
     padding: 0 5%;
 }
 
@@ -27,7 +30,7 @@ header {
 
 nav,
 header {
-    background-color: #363638;
+    /* background-color: #363638; */
 }
 
 .nav {
@@ -70,10 +73,44 @@ nav .logo {
 
 /* Main Content */
 
+.indexBg {
+    background-image: url("../assets/live-show-header2.jpg");
+    background-repeat: no-repeat;
+    height: auto;
+    width: 100%;
+    padding: 4em 20% 1em;
+}
+
+.indexBg,
+h1 {
+    color: #fff;
+    text-align: center;
+    font-size: 2.25em;
+}
+
 main {
-    width: 80%;
+    width: 60%;
     margin: 0 auto;
-    padding-top: 5em;
+    padding: 3em 0 1em;
+}
+
+.signIn {
+    background-color: transparent;
+    border: 0px none;
+}
+
+section {
+    background-color: #EDB020;
+}
+
+.icons .card {
+    border: 0px none;
+    background-color: #EDB020;
+    padding: 2em 0;
+}
+
+.card-img-top {
+    width: 20%;
 }
 
 
@@ -81,9 +118,9 @@ main {
 
 footer {
     width: 100%;
-    position: fixed;
+    position: relative;
     bottom: 0;
-    padding: .75em 0;
+    padding: .5em 0;
     background-color: #363638;
     color: #a9a9a9;
 }
