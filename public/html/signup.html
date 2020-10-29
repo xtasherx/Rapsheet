@@ -23,7 +23,7 @@
 
 </head>
 
-<body>
+<body id="signUp">
 
     <!-- Header with Logo and Navigation -->
 
@@ -31,7 +31,7 @@
         <nav class="navbar navbar-expand-lg navbar-light">
             <a href="index.html"><img class="logo" src="#" alt="logo"> </a>
 
-
+            <!-- 
             <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -48,7 +48,7 @@
                         <a class="nav-link" href="#">Profile</a>
                     </li>
                 </ul>
-            </div>
+            </div> -->
         </nav>
     </header>
 
@@ -57,14 +57,63 @@
 
         <h1>hello world</h1>
 
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
+        <div class="card">
+            <div class=" card-body ">
+                <div class="form-check form-check-inline ">
+                    <input class="form-check-input radio" type="radio" name="inlineRadioOptions" id="bandOption" value="Band">
+                    <label class="form-check-label" for="bandOption ">Band</label>
+                </div>
+                <div class="form-check form-check-inline ">
+                    <input class="form-check-input radio" type="radio" name="inlineRadioOptions" id="venueOption" value="Venue">
+                    <label class="form-check-label" for="venueOption">Venue</label>
+                </div>
+
+                <form>
+                    <div class="form-row ">
+                        <div class="form-group col-md-6 ">
+                            <label for="inputEmail4 ">Email</label>
+                            <input type="email " class="form-control " id="inputEmail4 " placeholder="Email ">
+                        </div>
+                        <div class="form-group col-md-6 ">
+                            <label for="inputPassword4 ">Password</label>
+                            <input type="password " class="form-control " id="inputPassword4 " placeholder="Password ">
+                        </div>
+                    </div>
+                    <div class="form-row ">
+                        <div class="form-group col-md-6">
+                            <label for="inputAddress ">Address</label>
+                            <input type="text " class="form-control " id="inputAddress " placeholder="1234 Main St ">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="inputAddress2 ">Address 2</label>
+                            <input type="text " class="form-control " id="inputAddress2 " placeholder="Apartment, studio, or floor ">
+                        </div>
+                    </div>
+                    <div class="form-row ">
+                        <div class="form-group col-md-6 ">
+                            <label for="inputCity ">City</label>
+                            <input type="text " class="form-control " id="inputCity ">
+                        </div>
+                        <div class="form-group col-md-4 ">
+                            <label for="inputState ">State</label>
+                            <select id="inputState " class="form-control ">
+                            <option selected>Choose...</option>
+                            <option>...</option>
+                        </select>
+                        </div>
+                        <div class="form-group col-md-2 ">
+                            <label for="inputZip ">Zip</label>
+                            <input type="text " class="form-control " id="inputZip ">
+                        </div>
+                    </div>
+
+                    <button type="submit " class="btn btn-primary ">Sign Up</button>
+                </form>
+                <br>
+                <p>Already have a profile? <a href="./login.html">Sign In</a></p>
             </div>
+
+
         </div>
 
     </main>
