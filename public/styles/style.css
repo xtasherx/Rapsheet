@@ -1,0 +1,218 @@
+body {
+    width: 100%;
+    height: auto;
+    background-color: #fefefe;
+    font-size: 16px;
+    line-height: 1.5em;
+    padding-bottom: 3em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h5,
+p {
+    color: #444;
+}
+
+header {
+    width: 100%;
+    position: static;
+    top: 0;
+    z-index: 10;
+    /* background-color: #fefefe; */
+    padding: 0 5%;
+}
+
+
+/* Main Navigation Styling */
+
+
+/* nav,
+header {
+    background-color: #363638;
+} */
+
+.nav {
+    margin-top: 1em;
+}
+
+nav .logo {
+    width: 40px;
+}
+
+.nav-link {
+    color: #fefefe;
+}
+
+.nav-link:hover {
+    color: #EDB020;
+}
+
+.nav-item,
+.nav-link {
+    width: 100%;
+    text-align: right;
+    display: block;
+    clear: both;
+    padding-top: .5em;
+}
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(237, 176, 32)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.custom-toggler,
+.custom-toggler:active,
+.custom-toggler:focus {
+    border: 0px!important;
+    outline: 0px!important;
+    box-shadow: 0px!important;
+}
+
+
+/* Index */
+
+.indexBg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../assets/live-show-header2.jpg");
+    background-repeat: no-repeat;
+    height: auto;
+    width: 100%;
+    padding: 4em 20% 1em;
+}
+
+.indexBg,
+h1 {
+    color: #fff;
+    text-align: center;
+    font-size: 2.25em;
+}
+
+.form-group {
+    width: 100%;
+    display: block;
+}
+
+main {
+    width: 60%;
+    margin: 0 auto;
+    padding: 3em 0 1em;
+}
+
+.signIn {
+    background-color: transparent;
+    border: 0px none;
+}
+
+.loginLinks {
+    font-size: 14px;
+}
+
+.pts {
+    background-color: #EDB020;
+}
+
+.icons .card {
+    border: 0px none;
+    background-color: transparent;
+    padding: 3em 0 1em;
+}
+
+.card-img-top {
+    width: 30%;
+}
+
+
+/* SignUp */
+
+.form-check-input {
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 15px;
+}
+
+
+/* Login */
+
+.loginBg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../assets/live-show-header.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.loginSec {
+    text-align: center;
+}
+
+
+/* Footer */
+
+footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    padding: .5em 0;
+    background-color: #363638;
+    color: #a9a9a9;
+}
+
+
+/* Small devices (landscape phones, 576px and up) */
+
+@media (min-width: 576px) {
+    .form-group {
+        width: 100%;
+    }
+}
+
+
+/* Medium devices (tablets, 768px and up) */
+
+@media (min-width: 768px) {
+    .form-group {
+        width: 40%;
+        display: inline-block;
+    }
+}
+
+
+/* Large devices (desktops, 992px and up) */
+
+@media (min-width: 992px) {
+    .nav-item,
+    .nav-link {
+        width: auto;
+        padding-top: 0;
+        display: inline-block;
+    }
+}
+
+
+/* Extra large devices (large desktops, 1200px and up) */
+
+@media (min-width: 1200px) {
+    .nav-item,
+    .nav-link {
+        width: auto;
+        text-align: right;
+        padding-top: 0;
+    }
+    .form-group {
+        width: 30%;
+        display: inline-block;
+    }
+    /* Login */
+    .loginBg {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../assets/live-show-header.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: auto;
+        width: 100%;
+        overflow: visible;
+    }
+}
