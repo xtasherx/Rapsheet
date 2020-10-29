@@ -29,11 +29,11 @@ header {
 
 /* Main Navigation Styling */
 
-
-/* nav,
+nav,
 header {
-    background-color: #363638;
-} */
+    position: absolute;
+    z-index: 10;
+}
 
 .nav {
     margin-top: 1em;
@@ -78,9 +78,12 @@ nav .logo {
 .indexBg {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../assets/live-show-header2.jpg");
     background-repeat: no-repeat;
+}
+
+.indexForm {
     height: auto;
     width: 100%;
-    padding: 4em 20% 1em;
+    padding: 3em 20% 1em;
 }
 
 .indexBg,
@@ -150,6 +153,40 @@ main {
 }
 
 
+/* Band Profile */
+
+* {
+    box-sizing: border-box;
+}
+
+.bandHead,
+.gallery {
+    max-height: 200px;
+    width: 100%;
+}
+
+.gallery-cell-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.flickity-prev-next-button {
+    display: none;
+}
+
+
+/* fade in lazy loaded image */
+
+.gallery-cell-image.flickity-lazyloaded,
+.gallery-cell-image.flickity-lazyerror {
+    opacity: 1;
+}
+
+
 /* Footer */
 
 footer {
@@ -206,13 +243,8 @@ footer {
         width: 30%;
         display: inline-block;
     }
-    /* Login */
-    .loginBg {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../assets/live-show-header.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: auto;
-        width: 100%;
-        overflow: visible;
+    .bandHead,
+    .gallery {
+        max-height: 500px;
     }
 }
