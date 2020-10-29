@@ -1,9 +1,14 @@
 $(document).ready(() => {
   // Getting references to our form and input
   const signUpForm = document.querySelector("#signUpBtn");
-  const emailInput = document.querySelector("#email-input");
-  const passwordInput = document.querySelector("#password-input");
-  const bandToggled = document.querySelector("#exampleRadios1");
+  const emailInput = document.querySelector("#inputEmail4");
+  const passwordInput = document.querySelector("#inputPassword4");
+  const bandToggled = document.querySelector("#bandOption");
+  const addressInput = document.querySelector("#inputAddress");
+  const address2Input = document.querySelector("#inputAddress2");
+  const cityInput = document.querySelector("#inputCity");
+  const stateInput = document.querySelector("#inputState");
+  const zipInput = document.querySelector("#inputZip");
 
   
   signUpForm.addEventListener('click',() => {
@@ -11,16 +16,24 @@ $(document).ready(() => {
     const userData = {
       email: emailInput.value.trim(),
       password: passwordInput.value.trim(),
-      isBand: bandToggled.checked
+      isBand: bandToggled.checked,
+      address: addressInput.value.trim(),
+      address2: address2Input.value.trim(),
+      city: cityInput.value.trim(),
+      state: stateInput.value.trim(),
+      zip: zipInput.value.trim()
+
     };
 
     if (!userData.email || !userData.password) {
       return;
     }
 
-    signUpUser(userData.email, userData.password,userData.isBand);
+    signUpUser(userData.email, userData.password,userData.isBand,userData.address,
+      userData.address2,userData.city,userData.state,userData.zip);
     emailInput.value = "";
     passwordInput.value = "";
+    
     
   });
   // Does a post to the signup route. If successful, we are redirected to the members page
