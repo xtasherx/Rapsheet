@@ -11,7 +11,7 @@ $(document).ready(() => {
   const zipInput = document.querySelector("#inputZip");
 
   
-  signUpForm.addEventListener('click',() => {
+  signUpForm.addEventListener("click",() => {
     event.preventDefault();
     const userData = {
       email: emailInput.value.trim(),
@@ -33,21 +33,30 @@ $(document).ready(() => {
       userData.address2,userData.city,userData.state,userData.zip);
     emailInput.value = "";
     passwordInput.value = "";
-    
+    addressInput.value ="";
+    address2Input.value="";
+    cityInput.value = "";
+    stateInput.value = "";
+    zipInput.value ="";
     
   });
   // Does a post to the signup route. If successful, we are redirected to the members page
   // Otherwise we log any errors
-  function signUpUser(email, password,isBand) {
+  function signUpUser(email, password,isBand,address,address2,city,state,zip) {
     $.post("/api/signup", {
       email: email,
       password: password,
-      isBand: isBand
+      isBand: isBand,
+      address: address,
+      address2: address2,
+      city: city,
+      state: state,
+      zip: zip
     })
       .then((data) => {
         console.log(data);
         if (data.isBand) {
-          window.location.replace("/band")
+          window.location.replace("/band");
         } else {
           window.location.replace("/members");
         }
