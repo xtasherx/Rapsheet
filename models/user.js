@@ -21,7 +21,32 @@ module.exports = function(sequelize, DataTypes) {
     isBand: {
       type: DataTypes.BOOLEAN,
       allowNull: false
-    }
+    },
+    address:
+      {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
+    address2:
+      {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
+    city:
+      {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
+    state:
+      {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
+    zip:
+      {
+        type: DataTypes.STRING,
+        allowNull: false
+      }
 
   });
   // check hashed pw vs stored pw 
