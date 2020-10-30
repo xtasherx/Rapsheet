@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 const path = require("path");
 
 // Requiring our custom middleware for checking if a user is logged in
