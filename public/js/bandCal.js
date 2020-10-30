@@ -1,6 +1,7 @@
+/* eslint-disable indent */
 const date = new Date();
 
-const renderCalendar = () => {
+renderCalendar = () => {
     date.setDate(1);
 
     const monthDays = document.querySelector(".days");

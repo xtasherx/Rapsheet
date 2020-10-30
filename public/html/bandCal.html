@@ -22,65 +22,71 @@
 
 </head>
 
-<!-- Header with Logo and Navigation -->
+<body>
 
-<header>
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <a href="index.html"><img class="logo" src="#" alt="logo"> </a>
+    <div id="wrapper">
+
+        <!-- Header with Logo and Navigation -->
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a href="index.html"><img class="logo" src="#" alt="logo"> </a>
 
 
-        <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
           </button>
 
-        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-            <ul class="nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Find a Band</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Find a Venue</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Profile</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</header>
-
-
-<body>
-    <div class="container">
-        <div class="calendar">
-            <div class="month">
-                <i class="fas fa-angle-left prev"></i>
-                <div class="date">
-                    <h1></h1>
-                    <p></p>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Find a Band</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Find a Venue</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Profile</a>
+                        </li>
+                    </ul>
                 </div>
-                <i class="fas fa-angle-right next"></i>
+            </nav>
+        </header>
+
+
+
+
+        <main>
+            <div class="container">
+                <div class="calendar">
+                    <div class="month">
+                        <i class="fas fa-angle-left prev"></i>
+                        <div class="date">
+                            <h1 class="pb-2"></h1>
+                            <p></p>
+                        </div>
+                        <i class="fas fa-angle-right next"></i>
+                    </div>
+                    <div class="weekdays">
+                        <div>Sun</div>
+                        <div>Mon</div>
+                        <div>Tue</div>
+                        <div>Wed</div>
+                        <div>Thu</div>
+                        <div>Fri</div>
+                        <div>Sat</div>
+                    </div>
+                    <div class="days"></div>
+                </div>
             </div>
-            <div class="weekdays">
-                <div>Sun</div>
-                <div>Mon</div>
-                <div>Tue</div>
-                <div>Wed</div>
-                <div>Thu</div>
-                <div>Fri</div>
-                <div>Sat</div>
-            </div>
-            <div class="days"></div>
-        </div>
+        </main>
     </div>
 
-
-    <footer class="shadow-lg ">
-        <p>&COPY; Footer</p>
+    <!-- Footer -->
+    <footer class="shadow-lg pt-3 pb-1.5 fixed-bottom">
+        <p class="text-center">&COPY; Footer</p>
     </footer>
 
-
-
+    <!-- Javascript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="../js/bandCal.js"></script>
 
