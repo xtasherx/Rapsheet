@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Name | Band
+        <!-- Use Handlebars for titles? -->
+    </title>
+
+    <!-- CSS Styles -->
+    <link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="../styles/style.css" />
+
+    <!-- Javascript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <!--  Navigation Javascript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <!-- Flickity JavaSctipt -->
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+
+    <!-- Google Fonts -->
+
+</head>
+
+<!-- Header with Logo and Navigation -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a href="index.html"><img class="logo" src="#" alt="logo"> </a>
+
+
+        <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/allBand">Find a Band</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/allVenue">Find a Venue</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/venue">Profile</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+
+<body>
+
+    <div id="wrapper">
+
+        <div class="bandIntro mt-4 mb-3 row">
+            <h2 class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">Really Long Venue Names</h2>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-end">
+                <a href="/bandCal"><button type="button" class="btn btn-dark mx-2">Schedule</button></a>
+                <a href="#"><button type="button" class="btn btn-dark mx-2">Contact</button></a>
+
+            </div>
+        </div>
+
+        <div class="bandHead js-flickity" data-flickity-options='{ "wrapAround": true, "pageDots": false, "setGallerySize": false, "autoPlay": true, "lazyLoad": true }'>
+
+            <div class="gallery-cell">
+                <img class="gallery-cell-img" src="../assets/live-show-header2.jpg">
+            </div>
+            <div class="gallery-cell">
+                <img class="gallery-cell-img" src="../assets/live-show-header1.jpg">
+            </div>
+            <div class="gallery-cell">
+                <img class="gallery-cell-img" src="../assets/live-show-header.jpg">
+            </div>
+
+        </div>
+
+
+        <div id="bandDetails">
+            <ul class="row justify-content-center">
+                <li class="px-4">Size</li>
+                <li class="px-4">Location</li>
+                <li class="px-4">Rate</li>
+            </ul>
+        </div>
+
+        <main>
+            <div class="venueInfo row mb-5">
+                <p id="bandDesc" class="col-12 col-lg-6">
+                    Lick master's hand at first then bite because im moody love and coo around boyfriend who purrs and makes the perfect moonlight eyes so i can purr and swat the glittery gleaming yarn to him (the yarn is from a $125 sweater) howl on top of tall thing Plan
+                    your travel morning beauty routine of licking self yet rub against owner because nose is wet my cat stared at me he was sipping his tea, too, pounce on unsuspecting person yet fooled again thinking the dog likes me for sleeps on my
+                    head. Have secret plans. Jump up to edge of bath, fall in then scramble in a mad panic to get out claws in the eye of the beholder for steal mom's crouton while she is in the bathroom but with tail in the air hide at bottom of staircaseto
+                    trip human meoooow.
+                </p>
+                <img class="col-12 col-lg-5" src="https://via.placeholder.com/400x200">
+            </div>
+
+            <section class="related">
+                <h4 class="mt-5 text-center">Related</h4>
+                <div class="row col-12 justify-content-center"></div>
+                <ul class="row d-flex justify-content-center flex-wrap">
+                    <img class="member mx-3 my-3" src="https://via.placeholder.com/150">
+                    <img class="member mx-3 my-3" src="https://via.placeholder.com/150">
+                    <img class="member mx-3 my-3" src="https://via.placeholder.com/150">
+                    <img class="member mx-3 my-3" src="https://via.placeholder.com/150">
+                </ul>
+    </div>
+    </section>
+
+    </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="shadow-lg pt-3 pb-1.5 fixed-bottom">
+        <p class="text-center">&COPY; Footer</p>
+    </footer>
+
+</body>
+
+</html>
