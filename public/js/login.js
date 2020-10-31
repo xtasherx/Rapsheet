@@ -32,7 +32,7 @@ $(document).ready(() => {
           window.location.replace("/band");
         } else {
           window.location.replace("/venue");
-      }})
+        }})
       .catch((err) => {
         console.log(err);
       });
