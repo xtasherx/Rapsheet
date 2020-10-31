@@ -17,10 +17,11 @@
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0",
     "express-session": "^1.17.1",
+    "express-sessions": "^1.0.6",
     "mysql": "^2.18.1",
     "mysql2": "^2.2.5",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
-    "sequelize": "^4.41.2"
+    "sequelize": "^4.44.4"
   }
 }
