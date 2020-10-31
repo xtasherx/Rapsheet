@@ -2,7 +2,7 @@ $(document).ready(() => {
   // Getting references to our form and inputs
   const loginForm = document.querySelector(".formLogin");
   const emailInput = document.querySelector(".staticEmail2");
-  const passwordInput = document.querySelector(".inputPassoword2");
+  const passwordInput = document.querySelector(".inputPassword2");
 
   // When the form is submitted, we validate there's an email and password entered
 
@@ -27,10 +27,12 @@ $(document).ready(() => {
       email: email,
       password: password,
     })
-      .then(() => {
-        window.location.replace("/members");
-        // If there's an error, log the error
-      })
+      .then((data) => {
+        if (data.isBand) {
+          window.location.replace("/band");
+        } else {
+          window.location.replace("/venue");
+      }})
       .catch((err) => {
         console.log(err);
       });
