@@ -1,0 +1,11 @@
+DROP DATABASE IF EXISTS bands;
+CREATE DATABASE bands;
+USE bands;
+ 
+
+
+CREATE TABLE user (
+
+);
+
+
