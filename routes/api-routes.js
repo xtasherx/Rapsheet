@@ -12,7 +12,12 @@ module.exports = function(app) {
     db.User.create({
       email: req.body.email,
       password: req.body.password,
-      isBand: req.body.isBand
+      isBand: req.body.isBand,
+      address: req.body.address,
+      address2: req.body.address2,
+      city: req.body.city,
+      state: req.body.state,
+      zip: req.body.zip
     })
       .then(() => {
         res.redirect(307, "/api/login");

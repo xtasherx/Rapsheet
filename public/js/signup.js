@@ -1,18 +1,21 @@
+
 $(document).ready(() => {
   // Getting references to our form and input
   const signUpForm = document.querySelector("#signUpBtn");
-  const emailInput = document.querySelector("#inputEmail4");
-  const passwordInput = document.querySelector("#inputPassword4");
+  const emailInput = document.querySelector(".inputEmail4");
+  const passwordInput = document.querySelector(".inputPassword4");
   const bandToggled = document.querySelector("#bandOption");
-  const addressInput = document.querySelector("#inputAddress");
-  const address2Input = document.querySelector("#inputAddress2");
-  const cityInput = document.querySelector("#inputCity");
-  const stateInput = document.querySelector("#inputState");
-  const zipInput = document.querySelector("#inputZip");
+  const addressInput = document.querySelector(".inputAddress");
+  const address2Input = document.querySelector(".inputAddress2");
+  const cityInput = document.querySelector(".inputCity");
+  const stateInput = document.querySelector(".inputState");
+  const zipInput = document.querySelector(".inputZip");
 
   
-  signUpForm.addEventListener("click",() => {
+  signUpForm.addEventListener("click",(event) => {
+    
     event.preventDefault();
+    
     const userData = {
       email: emailInput.value.trim(),
       password: passwordInput.value.trim(),
@@ -21,15 +24,14 @@ $(document).ready(() => {
       address2: address2Input.value.trim(),
       city: cityInput.value.trim(),
       state: stateInput.value.trim(),
-      zip: zipInput.value.trim()
-
+      zip: zipInput.value.trim(),
     };
 
     if (!userData.email || !userData.password) {
       return;
     }
 
-    signUpUser(userData.email, userData.password,userData.isBand,userData.address,
+    signUpUser(userData.email,userData.password,userData.isBand,userData.address,
       userData.address2,userData.city,userData.state,userData.zip);
     emailInput.value = "";
     passwordInput.value = "";
@@ -58,8 +60,10 @@ $(document).ready(() => {
         if (data.isBand) {
           window.location.replace("/band");
         } else {
-          window.location.replace("/members");
+          window.location.replace("/venue");
         }
+        
+     
   
         // If there's an error, handle it by throwing up a bootstrap alert
       })
