@@ -47,4 +47,8 @@ module.exports = function(app) {
   app.get("/allBand", isAuthenticated, (_req, res) => {
     res.sendFile(path.join(__dirname, "../public/html/allBand.html"));
   });
+
+  app.get("/bandCal", isAuthenticated, (_req, res) => {
+    res.sendFile(path.join(__dirname, "../public/html/bandCal.html"));
+  });
 };
