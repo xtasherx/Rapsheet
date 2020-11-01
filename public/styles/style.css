@@ -39,11 +39,6 @@
         margin: 0 auto;
         padding: 2em 0 5em;
     }
-    /* Main Navigation Styling */
-    /* nav,
-    header {
-        background-color: #363636;
-    } */
     
     .nav {
         margin-top: 1em;
@@ -81,24 +76,52 @@
         outline: 0px!important;
         box-shadow: 0px!important;
     }
+    /* Go Back Link */
+    
+    .backOption {
+        color: #24B6FF;
+        text-decoration: none;
+    }
+    
+    .backOption:hover,
+    .backOption:active {
+        color: #EDB020;
+        text-decoration: none;
+    }
+    /* Logout */
+    
+    .logout {
+        background-color: #24B6FF;
+        color: #fff;
+        border: 0px none;
+    }
     /* Index */
     
     .indexBg {
         background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../assets/live-show-header2.jpg");
         background-repeat: no-repeat;
+        background-position: center;
     }
     
-    .indexForm {
+    .indexHead {
         height: auto;
         width: 100%;
-        padding: 3em 20% 1em;
+        padding: 4em 20%;
+        color: #fff;
     }
     
-    .indexBg,
+    .indexHead,
     h1 {
         color: #fff;
         text-align: center;
         font-size: 2.25em;
+    }
+    
+    .indexHead,
+    h3 {
+        color: #fff;
+        text-align: center;
+        font-size: 1.25em;
     }
     
     .form-group {
@@ -305,13 +328,97 @@
     .related {
         margin-top: 8em;
     }
+    /* Upload Images */
+    /* Upload Images */
+    /* Upload Images */
+    
+    .imagePreview {
+        width: 100%;
+        height: 150px;
+        background-position: center center;
+        background: url(http://cliquecities.com/assets/no-image-e3699ae23f866f6cbdf8ba2443ee5c4e.jpg);
+        background-color: #fff;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: inline-block;
+        box-shadow: 0px -3px 6px 2px rgba(0, 0, 0, 0.05);
+    }
+    
+    .imageUpload {
+        width: 100%;
+        height: 100px;
+        background-position: center center;
+        background: url(http://cliquecities.com/assets/no-image-e3699ae23f866f6cbdf8ba2443ee5c4e.jpg);
+        background-color: #fff;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: inline-block;
+        box-shadow: 0px -3px 6px 2px rgba(0, 0, 0, 0.05);
+    }
+    
+    .btn-primary {
+        display: block;
+        border-radius: 0px;
+        box-shadow: 0px 4px 6px 2px rgba(0, 0, 0, 0.05);
+        margin-top: -5px;
+    }
+    
+    .imgUp {
+        margin-bottom: 15px;
+    }
+    
+    .del {
+        position: absolute;
+        top: 0px;
+        right: 15px;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        background-color: rgba(255, 255, 255, 0.6);
+        cursor: pointer;
+    }
+    
+    .imgAdd {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: #EDB020;
+        color: #fff;
+        box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        line-height: 30px;
+        margin-top: 0px;
+        cursor: pointer;
+        font-size: 15px;
+    }
+    
+    .imgPlus {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: #EDB020;
+        color: #fff;
+        box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        line-height: 30px;
+        margin-top: 0px;
+        cursor: pointer;
+        font-size: 15px;
+    }
+    /* Upload Images */
+    /* Upload Images */
+    /* Upload Images */
     /* Footer */
     
     footer {
         width: 100%;
         bottom: 0;
         background-color: #363638;
-        color: #d4d4d4;
+    }
+    
+    footer p {
+        color: #d1d1d1;
     }
     /* Small devices (landscape phones, 576px and up) */
     
@@ -368,8 +475,13 @@
         .nav-item,
         .nav-link {
             width: auto;
-            padding-top: 0;
             display: inline-block;
+            padding-top: .25em;
+        }
+        #indexCopy {
+            width: 60%;
+            margin: 0 auto;
+            padding: 3em 0 1em;
         }
         /* Band Profile */
         .flickity-viewport,
