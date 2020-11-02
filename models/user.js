@@ -3,7 +3,7 @@ const bcrypt = require("bcryptjs");
 
 module.exports = function(sequelize, DataTypes) {
   const User = sequelize.define("User", {
-    // creates email column and validates that input is an email 
+    // creates user table columns
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -12,12 +12,10 @@ module.exports = function(sequelize, DataTypes) {
         isEmail: true
       }
     },
-    // creates pw column
     password: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    // creates band column 
     isBand: {
       type: DataTypes.BOOLEAN,
       allowNull: false
@@ -30,7 +28,7 @@ module.exports = function(sequelize, DataTypes) {
     address2:
       {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
       },
     city:
       {
@@ -40,7 +38,7 @@ module.exports = function(sequelize, DataTypes) {
     state:
       {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
       },
     zip:
       {
