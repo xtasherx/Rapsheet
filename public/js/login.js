@@ -29,9 +29,9 @@ $(document).ready(() => {
     })
       .then((data) => {
         if (data.isBand) {
-          window.location.replace("/band");
+          window.location.replace("/allVenue");
         } else {
-          window.location.replace("/venue");
+          window.location.replace("/allBand");
         }})
       .catch((err) => {
         console.log(err);
