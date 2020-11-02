@@ -15,7 +15,7 @@ $(document).ready(() => {
   signUpForm.addEventListener("click",(event) => {
     
     event.preventDefault();
-    
+    console.log("object to send to db");
     const userData = {
       email: emailInput.value.trim(),
       password: passwordInput.value.trim(),
@@ -26,7 +26,7 @@ $(document).ready(() => {
       state: stateInput.value.trim(),
       zip: zipInput.value.trim(),
     };
-
+    console.log(userData);
     if (!userData.email || !userData.password) {
       return;
     }
@@ -58,13 +58,10 @@ $(document).ready(() => {
       .then((data) => {
         console.log(data);
         if (data.isBand) {
-          window.location.replace("/band");
+          window.location.replace("/allVenue");
         } else {
-          window.location.replace("/venue");
+          window.location.replace("/allBand");
         }
-        
-     
-  
         // If there's an error, handle it by throwing up a bootstrap alert
       })
       .catch(handleLoginErr);

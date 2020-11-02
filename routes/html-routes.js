@@ -9,9 +9,9 @@ module.exports = function(app) {
     app.get("/", (req, res) => {
         // If the user already has an account send them to correct page
         if (req.user) {
-            res.redirect("/band");
+            res.redirect("/api/user_data");
         }
-        res.sendFile(path.join(__dirname, "../public/html/signup.html"));
+        res.sendFile(path.join(__dirname, "../public/html/index.html"));
     });
 
     app.get("/login", (req, res) => {
@@ -19,6 +19,7 @@ module.exports = function(app) {
         if (req.user) {
             res.redirect("/login");
         }
+       
         res.sendFile(path.join(__dirname, "../public/html/login.html"));
     });
 
@@ -32,11 +33,17 @@ module.exports = function(app) {
 
     // Here we've add our isAuthenticated middleware to this route.
     // If a user who is not logged in tries to access this route they will be redirected to the signup page
+    app.get("/index", isAuthenticated, (_req, res) => {
+        res.sendFile(path.join(__dirname, "../public/html/venue.html"));
+    });
+
     app.get("/venue", isAuthenticated, (_req, res) => {
+        
         res.sendFile(path.join(__dirname, "../public/html/venue.html"));
     });
 
     app.get("/band", isAuthenticated, (_req, res) => {
+        
         res.sendFile(path.join(__dirname, "../public/html/band.html"));
     });
 
@@ -51,4 +58,13 @@ module.exports = function(app) {
     app.get("/bandCal", isAuthenticated, (_req, res) => {
         res.sendFile(path.join(__dirname, "../public/html/bandCal.html"));
     });
+
+    app.get("/bandEdit", isAuthenticated, (_req, res) => {
+        res.sendFile(path.join(__dirname, "../public/html/bandEdit.html"));
+    });
+
+    app.get("/venueEdit", isAuthenticated, (_req, res) => {
+        res.sendFile(path.join(__dirname, "../public/html/venueEdit.html"));
+    });
+
 };

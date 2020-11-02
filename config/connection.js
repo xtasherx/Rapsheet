@@ -1,7 +1,7 @@
 /* eslint-disable indent */
 const Sequelize = require("sequelize");
 
-const sequelize = new Sequelize("sequelize_library", "root", "M@v3r!ck19", {
+const sequelize = new Sequelize("sequelize_library", "root", {
     host: "localhost",
     port: 3306,
     dialect: "mysql",

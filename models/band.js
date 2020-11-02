@@ -9,11 +9,15 @@ module.exports = function(sequelize, DataTypes) {
     },
     bandBio:{
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true,
     },
     mediaURL: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    bandGenre: {
+      type: DataTypes.STRING,
+      allowNull: true,
     }
   });
 
