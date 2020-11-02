@@ -34,6 +34,7 @@ module.exports = function(app) {
             // The user is not logged in, send back an empty object
             res.json({});
         } else {
+            console.log(res);
           res.json({
                 email: req.user.email,
                 id: req.user.id,
@@ -41,10 +42,25 @@ module.exports = function(app) {
                 city: req.user.city,
                 state: req.user.state,
                 zip: req.user.zip
-            });
-            
+            });           
         }
     });
+
+        //  edit band route
+        app.post("/api/editBandProfile", (req, res) => {
+            db.Band.create({
+                    UserId: req.body.userId,
+                    bandName: req.body.bandName,
+                    bandGenre: req.body.bandGenre,
+                    bandBio: req.body.bandBio
+                })
+                .then(() => {
+                    res.redirect(307, "/band");
+                })
+                .catch((err) => {
+                    res.status(401).json(err);
+                });
+        });
 
     app.get("/logout", (req, res) => {
         req.logout();
