@@ -49,7 +49,7 @@ const renderCalendar = () => {
     days += `<div class="dayCube">
                     <div class="day">${i}</div>
                     <div class="description"></div>
-                </div>`;
+              </div>`;
     monthDays.innerHTML = days;
   }
 
