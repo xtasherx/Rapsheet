@@ -1,7 +1,7 @@
 /* ------------- */
 
 
-/* Venue Calendar */
+/* Band Calendar */
 
 
 /* ------------- */
@@ -52,31 +52,22 @@
     display: none
 }
 
-.dayCube {
+.days div {
     display: block;
     margin: 1em 0;
+    flex-wrap: wrap;
     padding: 1em 5%;
     font-size: 1em;
     width: 100%;
     height: auto;
     min-height: 90px;
-    background-color: #eee;
     border-radius: 5px;
     transition: background-color 0.2s;
 }
 
-.dayCube:hover {
-    background-color: #24ff99;
+.days div:hover:not(.today) {
+    background-color: #EDB020;
     cursor: pointer;
-}
-
-.day {
-    font-size: 1.5em;
-}
-
-.description {
-    padding: 1em 0 1em;
-    font-size: .85em;
 }
 
 .prev-date,
@@ -92,55 +83,12 @@
     background-color: #eee;
 }
 
-
-/* MODAL Popup */
-
-.bg-modal {
-    width: 100vw;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    position: fixed;
-    margin: 0px;
-    padding: 0px;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    display: none
+.booked {
+    background-color: #ee5555;
 }
 
-.modal-content {
-    width: 90%;
-    height: 14em;
-    background-color: #fefefe;
-    border-radius: 5px;
-    text-align: center;
-    padding: 2em 1%;
-    position: relative;
-}
-
-input {
-    width: 90%;
-    display: block;
-    margin: 15px auto;
-    padding: .5em 2%;
-    border: 1px solid rgb(224, 224, 224);
-    resize: vertical;
-    font-weight: bold;
-}
-
-.button {
-    font-weight: bold;
-}
-
-.close {
-    position: absolute;
-    padding: .25em 0 .5em;
-    top: 0;
-    right: 3%;
-    font-size: 32px;
-    cursor: pointer;
+.open {
+    background-color: #24ff99;
 }
 
 
@@ -152,6 +100,30 @@ input {
 /* Medium devices (tablets, 768px and up) */
 
 @media (min-width: 768px) {
+    .month {
+        width: 100%;
+        height: 6em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 5%;
+        text-align: center;
+    }
+    .month i {
+        font-size: 1em;
+        cursor: pointer;
+    }
+    .month h1 {
+        color: #444;
+        font-size: 2em;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin: .5em 0 0;
+    }
+    .month p {
+        font-size: 1em;
+    }
     .weekdays {
         width: 100%;
         height: 5rem;
@@ -163,7 +135,7 @@ input {
     .weekdays div {
         font-size: .85em;
         font-weight: 400;
-        letter-spacing: 0.1em;
+        letter-spacing: 0.1rem;
         flex: 1 0 calc(100% /7);
         height: auto;
         display: flex;
@@ -174,32 +146,22 @@ input {
         width: 100%;
         display: flex;
         flex-wrap: wrap;
-        text-align: center;
+        padding: 0.2em 1%;
     }
-    .dayCube {
+    .days div {
         font-size: 1em;
+        margin: .3em 1%;
         width: calc(85% / 7);
-        display: block;
+        display: flex;
         height: 10vw;
         max-height: 125px;
-        margin: .5em 1%;
-        padding: .5em 0;
-        text-align: center;
+        justify-content: center;
+        align-items: center;
         transition: background-color 0.2s;
     }
-    .dayCube:hover {
-        background-color: #24ff99;
+    .days div:hover:not(.today) {
+        background-color: #EDB020;
         cursor: pointer;
-    }
-    .day {
-        width: 100%;
-        font-size: 1em;
-        clear: both;
-    }
-    .description {
-        padding: 1em 0;
-        width: 100%;
-        clear: both;
     }
     .prev-date,
     .next-date {
@@ -217,11 +179,7 @@ input {
 
 /* Large devices (desktops, 992px and up) */
 
-@media (min-width: 992px) {
-    .dayCube {
-        padding: 1em 0;
-    }
-}
+@media (min-width: 992px) {}
 
 
 /* Extra large devices (large desktops, 1200px and up) */
