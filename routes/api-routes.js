@@ -30,11 +30,11 @@ module.exports = function(app) {
 
     // Route for getting some data about our user to be used client side
     app.get("/api/user_data", (req, res) => {
+       console.log(req.user);
         if (!req.user) {
             // The user is not logged in, send back an empty object
             res.json({});
-        } else {
-            console.log(res);
+        } else {  
           res.json({
                 email: req.user.email,
                 id: req.user.id,
@@ -44,9 +44,52 @@ module.exports = function(app) {
                 zip: req.user.zip
             });           
         }
-    });
 
-        //  edit band route
+    });
+    //gets info from band table for the user
+    app.get("/api/bandData/:id", (_req, res) => {
+        db.Band.findAll({
+          where:{userId: _req.params.id},
+          include: [db.User]
+        }).then((dbUser) => {
+            console.log(dbUser);
+          res.json({
+            email: dbUser[0].User.email,
+            address: dbUser[0].User.address,
+            address2: dbUser[0].User.address2,
+            city: dbUser[0].User.city,
+            state: dbUser[0].User.state,
+            zip: dbUser[0].User.zip,
+            isBand: dbUser[0].User.isBand,
+            bandName:dbUser[0].bandName,
+            bandBio: dbUser[0].bandBio,
+            bandGenre: dbUser[0].bandGenre,
+            });
+        });
+      });
+    //gets info from venue table for the user 
+      app.get("/api/venueData/:id", (_req, res) => {
+        db.Band.findAll({
+          where:{userId: _req.params.id},
+          include: [db.User]
+        }).then((dbUser) => {
+            console.log(dbUser);
+          res.json({
+            email: dbUser[0].User.email,
+            address: dbUser[0].User.address,
+            address2: dbUser[0].User.address2,
+            city: dbUser[0].User.city,
+            state: dbUser[0].User.state,
+            zip: dbUser[0].User.zip,
+            isBand: dbUser[0].User.isBand,
+            bandName:dbUser[0].bandName,
+            bandBio: dbUser[0].bandBio,
+            bandGenre: dbUser[0].bandGenre,
+            });
+        });
+      });
+
+        //edit band route
         app.post("/api/editBandProfile", (req, res) => {
             db.Band.create({
                     UserId: req.body.userId,
@@ -61,6 +104,7 @@ module.exports = function(app) {
                     res.status(401).json(err);
                 });
         });
+
 
     app.get("/logout", (req, res) => {
         req.logout();
