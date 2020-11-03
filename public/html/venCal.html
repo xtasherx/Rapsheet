@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendar</title>
+    <link rel="stylesheet" href="../styles/venCal.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  </head>
+  <body>
+    <div class="container">
+      <div class="calendar">
+        <div class="month">
+            <i class="fas fa-angle-left prev"></i>
+            <div class="date">
+                <h1></h1>
+                <p></p>
+            </div>
+            <i class="fas fa-angle-right next"></i>
+        </div>
+        <div class="weekdays">
+          <div>Sun</div>
+          <div>Mon</div>
+          <div>Tue</div>
+          <div>Wed</div>
+          <div>Thu</div>
+          <div>Fri</div>
+          <div>Sat</div>
+        </div>
+        <div class="days"></div>
+      </div>
+    </div>
+    <div class="bg-modal">
+      <div class="modal-content">
+        <div class="close">+</div>
+        <form action="" id="form">
+          <input type="text" placeholder="Enter Hours Needed i.e. 10pm to 2am" id="time">
+          <input type="text" placeholder="Enter Rate  i.e. $100/hr " id="rate">
+          <button class="button">Submit</button>
+        </form>
+      </div>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../js/venCal.js"></script>
+    
+  </body>
+</html>

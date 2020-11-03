@@ -58,6 +58,10 @@ module.exports = function(app) {
     app.get("/bandCal", isAuthenticated, (_req, res) => {
         res.sendFile(path.join(__dirname, "../public/html/bandCal.html"));
     });
+    
+    app.get("/venCal", isAuthenticated, (_req, res) => {
+        res.sendFile(path.join(__dirname, "../public/html/venCal.html"));
+    });
 
     app.get("/bandEdit", isAuthenticated, (_req, res) => {
         res.sendFile(path.join(__dirname, "../public/html/bandEdit.html"));
