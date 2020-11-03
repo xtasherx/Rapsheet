@@ -42,16 +42,16 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
             <ul class="nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="/allBand">Find a Band</a>
+                    <a class="nav-link" href="/bandEdit">Edit Profile</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/allVenue">Find a Venue</a>
+                    <a class="nav-link" href="/allBand">Find a Band</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="/venue">Profile</a>
                 </li>
                 <li>
-                    <button type="submit " class="btn btn-light logout ml-3" id="logOut">Log Out</button>
+                    <a href="/logout"><button type="button" class="btn logout ml-3">Log Out</button></a>
                 </li>
             </ul>
         </div>
@@ -66,7 +66,7 @@
         <div class="bandIntro mt-4 mb-3 row">
             <h2 class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">Really Long Venue Names</h2>
             <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-end">
-                <a href="/bandCal"><button type="button" class="btn btn-dark mx-2">Schedule</button></a>
+                <a href="/venCal"><button type="button" class="btn btn-dark mx-2">Schedule</button></a>
                 <a href="#"><button type="button" class="btn btn-dark mx-2">Contact</button></a>
 
             </div>
@@ -125,7 +125,8 @@
     <footer class="shadow-lg pt-3 pb-1.5 fixed-bottom">
         <p class="text-center">&COPY; Footer</p>
     </footer>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../js/venueProfile.js"></script>
 </body>
 
 </html>
