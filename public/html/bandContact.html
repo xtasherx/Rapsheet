@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Name | Sign Up
+        <!-- Use Handlebars for titles? -->
+    </title>
+
+    <!-- CSS Styles -->
+    <link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="../styles/style.css" />
+
+    <!-- Javascript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+
+
+    <!-- This runs the contact form -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#contact-form').submit(function(e) {
+                const form = document.querySelector('form[id="contact-form"]');
+                const name = form.elements['name'].value;
+                const email = form.elements['email'].value;
+                const subject = form.elements['subject'].value;
+                const message = "Message: " + form.elements['message'].value;
+
+                e.preventDefault();
+                var data = {
+                    service_id: 'service_q66vvoo',
+                    template_id: 'template_fo4sclm',
+                    user_id: 'user_0YRZy4XS8uA8ngKLs4kDR',
+                    template_params: {
+                        subject: subject,
+                        name: name,
+                        email: email,
+                        message: message
+                    }
+                };
+
+                $.ajax('https://api.emailjs.com/api/v1.0/email/send', {
+                    type: 'POST',
+                    data: JSON.stringify(data),
+                    contentType: 'application/json'
+                }).done(function() {
+                    alert('Your message was sent!');
+                }).fail(function(error) {
+                    alert('Oops… ' + JSON.stringify(error));
+                })
+            })
+        })
+    </script>
+
+</head>
+
+
+
+<body class="darkBg">
+
+    <div class="wrapper">
+
+        <!-- Header with Logo and Navigation -->
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a href="/index"><img class="logo" src="/public/assets/rapsheet-logo.png" alt="rapsheet logo"> </a>
+
+
+                <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/bandEdit">Edit Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/allVenue">Find a Venue</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/band">Profile</a>
+                        </li>
+                        <a href="/logout"><button type="button" class="btn logout ml-3">Log Out</button></a>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+
+        <div id="contactWrap" class="col-lg-6 col-md-10 col-sm-12">
+
+            <!-- Contact Form -->
+            <div class="contact">
+                <h1>Contact the Band</h1>
+
+                <form id="contact-form col">
+                    <div class=" form-contact mr-4 mt-5">
+                        <label for="name" class="form-label ">Full Name</label>
+                        <input type="text" name="name" class="form-control" id="name">
+                    </div>
+                    <div class="form-contact mr-4 mt-4">
+                        <label for="email" class="form-label ">Email address</label>
+                        <input type="email" name="email" class="form-control" id="email">
+                    </div>
+
+                    <div class="form-contact mt-4">
+                        <label for="phone" class="form-label ">Phone Number</label>
+                        <input type="text" name="phone" class="form-control" id="phone">
+                    </div>
+
+
+                    <div class="form-contact mt-4">
+                        <label for="subject" class="form-label">Subject</label>
+                        <input type="text" name="subject" class="form-control" id="subject ">
+                    </div>
+
+                    <div class="form-contact mt-4">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control" name="message" id="message" rows="3"></textarea>
+                    </div>
+                    <input type="submit" value=Send class="btn logout mt-4">
+                </form>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="shadow-lg pt-3 pb-1.5 fixed-bottom">
+        <p class="text-center">&COPY; Footer</p>
+    </footer>
+
+</body>
+
+</html>
