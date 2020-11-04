@@ -9,6 +9,7 @@ module.exports = function(app) {
         res.json(req.user);
     });
 
+
     //  signup route 
     app.post("/api/signup", (req, res) => {
         db.User.create({
@@ -67,29 +68,27 @@ module.exports = function(app) {
                 bandGenre: dbUser[0].bandGenre,
             });
         });
-
-      });
+    });
     //Dgets info from venue table for the user 
-      app.get("/api/venueData/:id", (_req, res) => {
+    app.get("/api/venueData/:id", (_req, res) => {
         db.Venue.findAll({
-          where:{userId: _req.params.id},
-          include: [db.User]
+            where: { userId: _req.params.id },
+            include: [db.User]
         }).then((dbUser) => {
             console.log(dbUser);
-          res.json({
-        
-            email: dbUser[0].User.email,
-            address: dbUser[0].User.address,
-            address2: dbUser[0].User.address2,
-            city: dbUser[0].User.city,
-            state: dbUser[0].User.state,
-            zip: dbUser[0].User.zip,
-            isBand: dbUser[0].User.isBand,
-            venueName:dbUser[0].venueName,
-            venueSize: dbUser[0].venueSize,
-            venueRate: dbUser[0].venueRate,
-            venueDesc: dbUser[0].venueDesc
+            res.json({
 
+                email: dbUser[0].User.email,
+                address: dbUser[0].User.address,
+                address2: dbUser[0].User.address2,
+                city: dbUser[0].User.city,
+                state: dbUser[0].User.state,
+                zip: dbUser[0].User.zip,
+                isBand: dbUser[0].User.isBand,
+                venueName: dbUser[0].venueName,
+                venueSize: dbUser[0].venueSize,
+                venueRate: dbUser[0].venueRate,
+                venueDesc: dbUser[0].venueDesc
             });
         });
     });
@@ -110,48 +109,48 @@ module.exports = function(app) {
             });
     });
 
-                //edit venue route
-                app.post("/api/editVenueProfile", (req, res) => {
-                  db.Venue.create({
-                          UserId: req.body.userId,
-                          venueName: req.body.venueName,
-                          venueSize: req.body.venueSize,
-                          rate: req.body.venueRate,
-                          venueInfo: req.body.venueDesc
-                      })
-                      .then(() => {
-                          res.redirect(307, "/venue");
-                      })
-                      .catch((err) => {
-                          res.status(401).json(err);
-                      });
-              });
-              // returns random band results 
-              app.get("/api/getBands", (_req, res) => {
-                db.Band.findAll({
-                  order: Sequelize.literal("rand()"),
-                  limit: 5,
-                  include: [db.User]
-                }).then((dbUser) => {
-                    console.log(dbUser);
-                  res.json({
-                    dbUser
-                    });
-                });
-              });
-              // returns random venue results 
-              app.get("/api/getVenues", (_req, res) => {
-                db.Venue.findAll({
-                  order: Sequelize.literal("rand()"),
-                  limit: 5,
-                  include: [db.User]
-                }).then((dbUser) => {
-                    console.log(dbUser);
-                  res.json({
-                    dbUser
-                    });
-                });
-              });
+    //edit venue route
+    app.post("/api/editVenueProfile", (req, res) => {
+        db.Venue.create({
+                UserId: req.body.userId,
+                venueName: req.body.venueName,
+                venueSize: req.body.venueSize,
+                rate: req.body.venueRate,
+                venueInfo: req.body.venueDesc
+            })
+            .then(() => {
+                res.redirect(307, "/venue");
+            })
+            .catch((err) => {
+                res.status(401).json(err);
+            });
+    });
+    // returns random band results 
+    app.get("/api/getBands", (_req, res) => {
+        db.Band.findAll({
+            order: Sequelize.literal("rand()"),
+            limit: 5,
+            include: [db.User]
+        }).then((dbUser) => {
+            console.log(dbUser);
+            res.json({
+                dbUser
+            });
+        });
+    });
+    // returns random venue results 
+    app.get("/api/getVenues", (_req, res) => {
+        db.Venue.findAll({
+            order: Sequelize.literal("rand()"),
+            limit: 5,
+            include: [db.User]
+        }).then((dbUser) => {
+            console.log(dbUser);
+            res.json({
+                dbUser
+            });
+        });
+    });
 
     app.get("/logout", (req, res) => {
         req.logout();

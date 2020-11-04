@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Name | Band
+        <!-- Use Handlebars for titles? -->
+    </title>
+
+    <!-- CSS Styles -->
+    <link rel="stylesheet" type="text/css" href="/public/styles/reset.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="/public/styles/style.css" />
+
+    <!-- Javascript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <!--  Navigation Javascript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <!-- Flickity JavaSctipt -->
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+
+    <!-- Google Fonts -->
+
+</head>
+
+<!-- Header with Logo and Navigation -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a href="/index"><img class="logo" src="/public/assets/rapsheet-logo.png" alt="rapsheet logo"> </a>
+
+
+        <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/bandEdit">Edit Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/allVenue">Find a Venue</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/band">Profile</a>
+                </li>
+                <a href="/logout"><button type="button" class="btn logout ml-3">Log Out</button></a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+</header>
+
+
+<body>
+
+    <div id="wrapper">
+
+        <div class="bandIntro mt-4 mb-3 row">
+            <h2 class="col-12 col-md-6 bandNameH2">Paramore</h2>
+            <div class="col-12 col-md-6 d-flex justify-content-end">
+                <a href="/bandCal"><button type="button" class="btn btn-dark mx-2">Schedule</button></a>
+                <a href="#"><button type="button" class="btn btn-dark mx-2">Contact</button></a>
+
+            </div>
+        </div>
+
+        <div class="bandHead js-flickity" data-flickity-options='{ "wrapAround": true, "pageDots": false, "setGallerySize": false, "autoPlay": true, "lazyLoad": true }'>
+
+            <div class="gallery-cell">
+                <img class="gallery-cell-img" src="/public/assets/paramore-1.jpg">
+            </div>
+            <div class="gallery-cell">
+                <img class="gallery-cell-img" src="/public/assets/paramore-3.jpg">
+            </div>
+            <div class="gallery-cell">
+                <img class="gallery-cell-img" src="/public/assets/paramore-4.jpg">
+            </div>
+
+        </div>
+
+
+        <div id="bandDetails">
+            <ul class="row justify-content-center">
+                <li class="px-4"><strong>Genre: &ensp;</strong>Rockpop</li>
+                <li class="px-4 bandLoc"><strong>Location: &ensp;</strong>Franklin, Tennessee</li>
+                <li class="px-4"><strong>Rate: &ensp;</strong>$750K</li>
+
+            </ul>
+        </div>
+
+        <main>
+
+            <p id="bandDesc" class="col-12 col-lg-8">
+                Paramore is an American rock band from Franklin, Tennessee, formed in 2004. The band currently consists of lead vocalist Hayley Williams, guitarist Taylor York and drummer Zac Farro. Williams and Farro are founding members of the group, while York, a
+                high school friend of the original lineup, joined in 2007.
+            </p>
+
+            <h4 class="mt-5">Members</h4>
+
+            <ul class="row d-flex align-content-center flex-wrap">
+                <img class="member mx-3 my-3" src="/public/assets/paramore_haley-williams.jpg" width="200px" height="200px">
+                <img class="member mx-3 my-3" src="/public/assets/paramore_taylor-york.jpg" width="200px" height="200px">
+                <img class=" member mx-3 my-3 " src="/public/assets/paramore_zach-farro.jpg " width="200px " height="200px">
+            </ul>
+
+            <h4 class="mt-5">Audio</h4>
+
+            <audio controls class="audio mx-3 my-3">
+            <source src="viper.mp3" type="audio/mp3">
+            <p>Your browser doesn't support HTML5 audio. Here is a <a href="viper.mp3">link to the audio</a> instead.</p>
+        </audio>
+
+            <audio controls class="audio mx-2 my-3">
+            <source src="viper.mp3" type="audio/mp3">
+            <p>Your browser doesn't support HTML5 audio. Here is a <a href="viper.mp3">link to the audio</a> instead.</p>
+        </audio>
+
+            <h4 class="mt-5">Video</h4>
+
+            <div class="videos row d-flex align-content-center flex-wrap">
+                <img class="member mx-3 my-2" src="https://via.placeholder.com/300x150">
+                <img class="member mx-3 my-2" src="https://via.placeholder.com/300x150">
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="shadow-lg pt-3 pb-1.5 fixed-bottom">
+        <p class="text-center">&COPY; Footer</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/public/js/bandProfile.js"></script>
+</body>
+
+</html>

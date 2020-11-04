@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Name | Band
+        <!-- Use Handlebars for titles? -->
+    </title>
+
+    <!-- CSS Styles -->
+    <link rel="stylesheet" type="text/css" href="/public/styles/reset.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="/public/styles/style.css" />
+
+    <!-- Javascript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <!--  Navigation Javascript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <!-- Flickity JavaSctipt -->
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+
+    <!-- Google Fonts -->
+
+</head>
+
+<!-- Header with Logo and Navigation -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a href="/index"><img class="logo" src="/public/assets/rapsheet-logo.png" alt="rapsheet logo"> </a>
+
+
+        <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/venueEdit">Edit Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/allBand">Find a Band</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/venue">Profile</a>
+                </li>
+                <li>
+                    <a href="/logout"><button type="button" class="btn logout ml-3">Log Out</button></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+
+<body>
+
+    <div id="wrapper">
+
+        <div class="bandIntro mt-4 mb-3 row">
+            <h2 class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 venueName">Luna Music Bar & Lounge</h2>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-end">
+                <a href="/venCal"><button type="button" class="btn btn-dark mx-2">Calendar</button></a>
+                <a href="#"><button type="button" class="btn btn-dark mx-2">Contact</button></a>
+
+            </div>
+        </div>
+
+        <div class="bandHead js-flickity" data-flickity-options='{ "wrapAround": true, "pageDots": false, "setGallerySize": false, "autoPlay": true, "lazyLoad": true }'>
+
+            <div class="gallery-cell">
+                <img class="gallery-cell-img" src="/public/assets/luna-music-bar-1.jpg">
+            </div>
+            <div class="gallery-cell">
+                <img class="gallery-cell-img" src="/public/assets/luna-music-bar-2.jpg">
+            </div>
+            <div class="gallery-cell">
+                <img class="gallery-cell-img" src="/public/assets/luna-music-bar-3.jpg">
+            </div>
+
+        </div>
+
+
+        <div id="bandDetails">
+            <ul class="row justify-content-center">
+                <li class="px-4"><strong>Size: &ensp;</strong>100 capacity</li>
+                <li class="px-4"><strong>Location: &ensp;</strong> San Antonio, Tx</li>
+                <li class="px-4"><strong>Rate: &ensp;</strong> $600</li>
+            </ul>
+        </div>
+
+        <main>
+            <div class="venueInfo row mb-5">
+                <div id="bandDesc" class="col-12 col-lg-6">
+                    <p>LSince 2003, LUNA has garnered the reputation for presenting only the very best in Live Soul, Blues, Jazz, Salsa & more in a laid back vintage style ambience. We offer a full bar featuring fresh fruit cocktails as well as a kitchen
+                        serving appetizers until Midnight. Enjoy our dance floor, patio, exceptional sound/lighting & never a bad seat in the house!
+                    </p>
+                    <h4 style="margin: .5em 0px;"><strong>Hours</strong></h4>
+                    <ul>
+                        <li>MONDAY – closed</li>
+                        <li>TUESDAY – closed</li>
+                        <li>WEDNSDAY – closed</li>
+                        <li>THURSDAY – 8pm–2am</li>
+                        <li>FRIDAY – 8pm–2am</li>
+                        <li>SATURDAY – 8pm–2am</li>
+                        <li>SUNDAY – closed</li>
+                    </ul>
+                </div>
+
+                <iframe class="col-12 col-lg-5" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3472.497566895628!2d-98.50097058489753!3d29.50185278208295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x865c5feee5788063%3A0x5cd4b10018d9ddd5!2s6740%20San%20Pedro%20Ave%2C%20San%20Antonio%2C%20TX%2078216!5e0!3m2!1sen!2sus!4v1604461322457!5m2!1sen!2sus"
+                    width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+
+            <section class="related">
+                <h4 class="mt-5 text-center">Related</h4>
+                <div class="row col-12 justify-content-center"></div>
+                <ul class="row d-flex justify-content-center flex-wrap">
+                    <img class="member mx-3 my-3" src="https://via.placeholder.com/150">
+                    <img class="member mx-3 my-3" src="https://via.placeholder.com/150">
+                    <img class="member mx-3 my-3" src="https://via.placeholder.com/150">
+                    <img class="member mx-3 my-3" src="https://via.placeholder.com/150">
+                </ul>
+    </div>
+    </section>
+
+    </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="shadow-lg pt-3 pb-1.5 fixed-bottom">
+        <p class="text-center">&COPY; Footer</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/public/js/venueProfile.js"></script>
+</body>
+
+</html>
