@@ -9,9 +9,21 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: true
     },
-    mediaURL: {
+    profPic1: {
       type: DataTypes.STRING,
-      allowNull: true
+      allowNull: true,
+    },
+    profPic2: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    profPic3: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    subPic2: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
     venueSize: {
       type: DataTypes.STRING,

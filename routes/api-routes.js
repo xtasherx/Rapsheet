@@ -66,9 +66,19 @@ module.exports = function(app) {
                 bandName: dbUser[0].bandName,
                 bandBio: dbUser[0].bandBio,
                 bandGenre: dbUser[0].bandGenre,
-                bandPic: dbUser[0].mediaURL
+                bandPic1: dbUser[0].profPic1,
+                bandPic2: dbUser[0].profPic2,
+                bandPic3: dbUser[0].profPic3,
+                memPic1: dbUser[0].memPic1,
+                memPic2: dbUser[0].memPic2,
+                memPic3: dbUser[0].memPic3,
+                memPic4: dbUser[0].memPic4,
+                vid1: dbUser[0].vid1,
+                vid2: dbUser[0].vid2
             });
+        
         });
+      
     });
     //Dgets info from venue table for the user 
     app.get("/api/venueData/:id", (_req, res) => {
@@ -79,7 +89,6 @@ module.exports = function(app) {
             console.log(dbUser);
 
           res.json({
-        
             email: dbUser[0].User.email,
             address: dbUser[0].User.address,
             address2: dbUser[0].User.address2,
@@ -87,18 +96,17 @@ module.exports = function(app) {
             state: dbUser[0].User.state,
             zip: dbUser[0].User.zip,
             isBand: dbUser[0].User.isBand,
+            venueInfo: dbUser[0].venueInfo,
             venueName:dbUser[0].venueName,
             venueSize: dbUser[0].venueSize,
             venueRate: dbUser[0].venueRate,
             venueDesc: dbUser[0].venueDesc,
-            venuePic: dbUser[0].mediaURL
-
+            venuePic1: dbUser[0].profPic1,
+            venuePic2: dbUser[0].profPic2,
+            venuePic3: dbUser[0].profPic3,
+            venuePic4: dbUser[0].subPic2
             });
         });
-    });
-    // eslint-disable-next-line no-empty-function
-    app.get("/api/viewBand/:id",(_req,res)=>{
-        res.redirect("/viewBand");
     });
 
     //edit band route
@@ -108,7 +116,15 @@ module.exports = function(app) {
                 bandName: req.body.bandName,
                 bandGenre: req.body.bandGenre,
                 bandBio: req.body.bandBio,
-                bandPic: req.body.mediaURL
+                profPic1: req.body.profPic1,
+                profPic2: req.body.profPic2,
+                profPic3: req.body.profPic3,
+                memPic1: req.body.memPic1,
+                memPic2: req.body.memPic2,
+                memPic3: req.body.memPic3,
+                memPic4: req.body.memPic4,
+                vid1: req.body.vid1,
+                vid2: req.body.vid2
             })
             .then(() => {
                 res.redirect(307, "/band");
@@ -126,7 +142,10 @@ module.exports = function(app) {
                           venueSize: req.body.venueSize,
                           rate: req.body.venueRate,
                           venueInfo: req.body.venueDesc,
-                          venuePic: req.body.mediaURL
+                          profPic1: req.body.profPic1,
+                          profPic2: req.body.profPic2,
+                          profPic3: req.body.profPic3,
+                          subPic2: req.body.subPic2
                       })
                       .then(() => {
                           res.redirect(307, "/venue");
@@ -167,3 +186,4 @@ module.exports = function(app) {
         res.redirect("/");
     });
 };
+

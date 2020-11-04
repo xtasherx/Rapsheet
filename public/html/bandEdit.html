@@ -33,7 +33,7 @@
         <!-- Header with Logo and Navigation -->
         <header>
             <nav class="navbar navbar-expand-lg navbar-light">
-                <a href="/index"><img class="logo" src="/public/assets/rapsheet-logo.png" alt="rapsheet logo"> </a>
+                <a href="/index"><img class="logo" src="../assets/rapsheet-logo.png" alt="rapsheet logo"> </a>
 
 
                 <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -71,17 +71,19 @@
                                 <input type="text " class="form-control inputBandName" id="inputBandName " placeholder="Band Name ">
                             </div>
                         </div>
-                        <p>Add Header Images (*must be large and horizontal)</p>
                         <div class="form-row row">
-                            <div class="col-sm-3 imgUp">
-                                <div class="imageUpload"></div>
-                                <label class="btn btn-primary">
-                                        Search<input type="file" class="uploadHead img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;">
-                                    </label>
+                            <div class="form-group col-md-4 ">
+                                <label for="inputHeaderURLS">URL's for header images (Direct upload coming soon)</label>
+                                <input type="text " class="form-control headerP1 mb-1"   placeholder="https://www...">
+                                <input type="text " class="form-control headerP2 mb-1"   placeholder="https://www...">
+                                <input type="text " class="form-control headerP3 mb-1"   placeholder="https://www...">
+                                
                             </div>
-                            <!-- col-2 -->
-                            <i class="fa fa-plus imgPlus"></i>
                         </div>
+
+                            <!-- col-2 -->
+
+                 
 
                         <div class="form-row ">
                             <div class="form-group col-md-4 ">
@@ -99,49 +101,25 @@
                             <label for="descText">Tell us about you!</label>
                             <textarea class="form-control descText" id="descText" rows="3" placeholder="And so our story begins..."></textarea>
                         </div>
-                        <p>Add Member</p>
                         <div class="form-row row">
-                            <div class="col-sm-2 imgUp">
-                                <div class="imagePreview"></div>
-                                <label class="btn btn-primary">
-                                        Search<input type="file" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;">
-                                    </label>
-                            </div>
-                            <!-- col-2 -->
-                            <i class="fa fa-plus imgAdd"></i>
-                        </div>
-
-                        <p class="mt-5">Add Audio</p>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div id="inputAudioRow">
-                                    <div class="input-group mb-3 col-md-6">
-                                        <input type="url" name="inputAudio[]" class="form-control m-input" placeholder="https://www... " autocomplete="off">
-                                        <div class="input-group-append">
-                                            <button id="removeAudio" type="button" class="btn btn-danger">-</button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div id="newAudioRow"></div>
-                                <button id="addAudio" type="button" class="btn btn-warning">+</button>
+                            <div class="form-group col-md-4 ">
+                                <label for="inputHeaderURLS">URL's for member images (Direct upload coming soon)</label>
+                                <input type="text " class="form-control memP1 mb-1"   placeholder="https://www...">
+                                <input type="text " class="form-control memP2 mb-1"   placeholder="https://www...">
+                                <input type="text " class="form-control memP3 mb-1"   placeholder="https://www...">
+                                <input type="text " class="form-control memP4 mb-1"   placeholder="https://www...">
+                                
                             </div>
                         </div>
+
 
                         <p class="mt-5">Add Video</p>
-                        <div class="row mt-5 mb-5">
-                            <div class="col-lg-12">
-                                <div id="inputVideoRow">
-                                    <div class="input-group mb-3 col-md-6">
-                                        <input type="url" name="inputVideo[]" class="form-control m-input" placeholder="https://youtube.come/... " autocomplete="off">
-                                        <div class="input-group-append">
-                                            <button id="removeVideo" type="button" class="btn btn-danger">-</button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div id="newVideoRow"></div>
-                                <button id="addVideo" type="button" class="btn btn-warning">+</button>
+                        <div class="form-row row">
+                            <div class="form-group col-md-4 ">
+                                <label for="inputHeaderURLS">URL's for videos (Direct upload coming soon)</label>
+                                <input type="text " class="form-control vid1 mb-1"   placeholder="https://www...">
+                                <input type="text " class="form-control vid2 mb-1"   placeholder="https://www...">
+                                
                             </div>
                         </div>
 
@@ -167,112 +145,6 @@
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="../js/bandEdit.js"></script>
-
-
-
-    <!-- Form Header Img Upload JS -->
-    <script>
-        $(".imgPlus").click(function() {
-            $(this).closest(".row").find('.imgPlus').before('<div class="col-sm-3 imgUp"><div class="imageUpload"></div><label class="btn btn-primary">Upload<input type="file" class="uploadFile img" value="Upload Photo" style="width:0px;height:0px;overflow:hidden;"></label><i class="fa fa-times del"></i></div>');
-        });
-        $(document).on("click", "i.del", function() {
-            $(this).parent().remove();
-        });
-        $(function() {
-            $(document).on("change", ".uploadHead", function() {
-                var uploadHead = $(this);
-                var files = !!this.files ? this.files : [];
-                if (!files.length || !window.FileReader) return; // no file selected, or no FileReader support
-
-                if (/^image/.test(files[0].type)) { // only image file
-                    var reader = new FileReader(); // instance of the FileReader
-                    reader.readAsDataURL(files[0]); // read the local file
-
-                    reader.onloadend = function() { // set image data as background of div
-                        //alert(uploadFile.closest(".upimage").find('.imagePreview').length);
-                        uploadHead.closest(".imgPlus").find('.imageUpload').css("background-image", "url(" + this.result + ")");
-                    }
-                }
-
-            });
-        });
-    </script>
-
-
-
-    <!-- Form Member Img Upload JS -->
-    <script>
-        $(".imgAdd").click(function() {
-            $(this).closest(".row").find('.imgAdd').before('<div class="col-sm-2 imgUp"><div class="imagePreview"></div><label class="btn btn-primary">Upload<input type="file" class="uploadFile img" value="Upload Photo" style="width:0px;height:0px;overflow:hidden;"></label><i class="fa fa-times del"></i></div>');
-        });
-        $(document).on("click", "i.del", function() {
-            $(this).parent().remove();
-        });
-        $(function() {
-            $(document).on("change", ".uploadFile", function() {
-                var uploadFile = $(this);
-                var files = !!this.files ? this.files : [];
-                if (!files.length || !window.FileReader) return; // no file selected, or no FileReader support
-
-                if (/^image/.test(files[0].type)) { // only image file
-                    var reader = new FileReader(); // instance of the FileReader
-                    reader.readAsDataURL(files[0]); // read the local file
-
-                    reader.onloadend = function() { // set image data as background of div
-                        //alert(uploadFile.closest(".upimage").find('.imagePreview').length);
-                        uploadFile.closest(".imgUp").find('.imagePreview').css("background-image", "url(" + this.result + ")");
-                    }
-                }
-
-            });
-        });
-    </script>
-
-
-    <!-- Add Audio form fields -->
-    <script type="text/javascript">
-        // add row
-        $("#addAudio").click(function() {
-            var html = '';
-            html += '<div id="inputAudioRow">';
-            html += '<div class="input-group mb-3 col-md-6">';
-            html += '<input type="url" name="inputAudio[]" class="form-control m-input" placeholder="https://www... " autocomplete="off">';
-            html += '<div class="input-group-append">';
-            html += '<button id="removeAudio" type="button" class="btn btn-danger">-</button>';
-            html += '</div>';
-            html += '</div>';
-
-            $('#newAudioRow').append(html);
-        });
-
-        // remove row
-        $(document).on('click', '#removeAudio', function() {
-            $(this).closest('#inputAudioRow').remove();
-        });
-    </script>
-
-
-    <!-- Add Video form fields -->
-    <script type="text/javascript">
-        // add row
-        $("#addVideo").click(function() {
-            var html = '';
-            html += '<div id="inputVideoRow">';
-            html += '<div class="input-group mb-3 col-md-6">';
-            html += '<input type="url" name="inputVideo[]" class="form-control m-input" placeholder="https://youtube.come/... " autocomplete="off">';
-            html += '<div class="input-group-append">';
-            html += '<button id="removeVideo" type="button" class="btn btn-danger">-</button>';
-            html += '</div>';
-            html += '</div>';
-
-            $('#newVideoRow').append(html);
-        });
-
-        // remove row
-        $(document).on('click', '#removeVideo', function() {
-            $(this).closest('#inputVideoRow').remove();
-        });
-    </script>
 
 </body>
 

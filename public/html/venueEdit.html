@@ -33,7 +33,7 @@
         <!-- Header with Logo and Navigation -->
         <header>
             <nav class="navbar navbar-expand-lg navbar-light">
-                <a href="/index"><img class="logo" src="/public/assets/rapsheet-logo.png" alt="rapsheet logo"> </a>
+                <a href="/index"><img class="logo" src="../assets/rapsheet-logo.png" alt="rapsheet logo"> </a>
 
 
                 <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -71,18 +71,20 @@
                                 <input type="text " class="form-control inputBusiness" id="inputBusiness " placeholder="Business">
                             </div>
                         </div>
-                        <p>Add Header Images (*must be large and horizontal)</p>
+  
                         <div class="form-row row">
-                            <div class="col-sm-3 imgUp">
-                                <div class="imageUpload"></div>
-                                <label class="btn btn-primary">
-                                        Search<input type="file" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;">
-                                    </label>
+                            <div class="form-group col-md-4 ">
+                                <label for="inputHeaderURLS">URL's for header images (Direct upload coming soon)</label>
+                                <input type="text " class="form-control headerP1 mb-1"   placeholder="https://www...">
+                                <input type="text " class="form-control headerP2 mb-1"   placeholder="https://www...">
+                                <input type="text " class="form-control headerP3 mb-1"   placeholder="https://www...">
+                                <input type="text " class="form-control headerP4 mb-1"   placeholder="https://www...">
+                                
                             </div>
-                            <!-- col-2 -->
-                            <i class="fa fa-plus imgAdd"></i>
                         </div>
+                        <div class="form-row row">
 
+                        </div>
                         <div class="form-row ">
                             <div class="form-group col-md-4 ">
                                 <label for="inputCapacity">Size</label>
@@ -122,35 +124,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="../js/venueEdit.js"></script>
 
-
-
-    <!-- Form Member Img Upload JS -->
-    <script>
-        $(".imgAdd").click(function() {
-            $(this).closest(".row").find('.imgAdd').before('<div class="col-sm-3 imgUp"><div class="imageUpload"></div><label class="btn btn-primary">Search<input type="file" class="uploadFile img" value="Upload Photo" style="width:0px;height:0px;overflow:hidden;"></label><i class="fa fa-times del"></i></div>');
-        });
-        $(document).on("click", "i.del", function() {
-            $(this).parent().remove();
-        });
-        $(function() {
-            $(document).on("change", ".uploadFile", function() {
-                var uploadFile = $(this);
-                var files = !!this.files ? this.files : [];
-                if (!files.length || !window.FileReader) return; // no file selected, or no FileReader support
-
-                if (/^image/.test(files[0].type)) { // only image file
-                    var reader = new FileReader(); // instance of the FileReader
-                    reader.readAsDataURL(files[0]); // read the local file
-
-                    reader.onloadend = function() { // set image data as background of div
-                        //alert(uploadFile.closest(".upimage").find('.imagePreview').length);
-                        uploadFile.closest(".imgUp").find('.imagePreview').css("background-image", "url(" + this.result + ")");
-                    }
-                }
-
-            });
-        });
-    </script>
 
 </body>
 

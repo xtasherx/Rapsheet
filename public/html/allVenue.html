@@ -30,7 +30,7 @@
         <!-- Header with Logo and Navigation -->
         <header>
             <nav class="navbar navbar-expand-lg navbar-light">
-                <a href="/index"><img class="logo" src="/public/assets/rapsheet-logo.png" alt="rapsheet logo"> </a>
+                <a href="/index"><img class="logo" src="../assets/rapsheet-logo.png" alt="rapsheet logo"> </a>
 
 
                 <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,7 +55,7 @@
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
                 <div class="col mb-3">
                     <div class="card">
-                        <img class="col mt-3" src="https://via.placeholder.com/500x300" class="card-img-top" alt="...">
+                        <img class="col mt-3 venuepic" src="https://via.placeholder.com/500x300" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text">Genre</p>
@@ -65,7 +65,7 @@
                 </div>
                 <div class="col mb-3">
                     <div class="card">
-                        <img class="col mt-3" src="https://via.placeholder.com/500x300" class="card-img-top" alt="...">
+                        <img class="col mt-3 venuepic" src="https://via.placeholder.com/500x300" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text">Genre</p>
@@ -75,7 +75,7 @@
                 </div>
                 <div class="col mb-3">
                     <div class="card">
-                        <img class="col mt-3" src="https://via.placeholder.com/500x300" class="card-img-top" alt="...">
+                        <img class="col mt-3 venuepic" src="https://via.placeholder.com/500x300" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text">Genre</p>
@@ -85,7 +85,7 @@
                 </div>
                 <div class="col mb-3">
                     <div class="card">
-                        <img class="col mt-3" src="https://via.placeholder.com/500x300" class="card-img-top" alt="...">
+                        <img class="col mt-3 venuepic" src="https://via.placeholder.com/500x300" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text">Genre</p>
@@ -105,12 +105,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
         $.get("/api/getVenues", (data) => {
-            console.log(data.dbUser[0].venueName);
+            console.log(data.dbUser);
             const cardTitles = document.querySelectorAll(".card-title");
             const cardText = document.querySelectorAll(".card-text");
+            const venuePic = document.querySelectorAll(".venuepic");
             cardTitles.forEach((name, i) => {
                 name.innerHTML = data.dbUser[i].venueName;
             })
+            cardText.forEach((address,i) => {
+                address.innerHTML = `${data.dbUser[i].User.address} ${data.dbUser[i].User.address2}, ${data.dbUser[i].User.city} ${data.dbUser[i].User.state}`
+            })
+            venuePic.forEach((pic,i) => {
+                pic.setAttribute("src", data.dbUser[i].profPic1);
+            })
+
 
         });
     </script>
