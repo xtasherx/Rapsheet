@@ -1,16 +1,14 @@
 /* eslint-disable indent */
 const path = require("path");
 
+
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
 
     app.get("/", (req, res) => {
-        // If the user already has an account send them to correct page
-        if (req.user) {
-            res.redirect("/api/user_data");
-        }
+
         res.sendFile(path.join(__dirname, "../public/html/index.html"));
     });
 
@@ -43,8 +41,13 @@ module.exports = function(app) {
     });
 
     app.get("/band", isAuthenticated, (_req, res) => {
-        
         res.sendFile(path.join(__dirname, "../public/html/band.html"));
+        // res.render("band");
+    });
+
+    app.get("/viewBand", isAuthenticated, (_req, res) => {
+        
+        res.sendFile(path.join(__dirname, "../public/html/viewBand.html"));
     });
 
     app.get("/allVenue", isAuthenticated, (_req, res) => {
@@ -71,4 +74,11 @@ module.exports = function(app) {
         res.sendFile(path.join(__dirname, "../public/html/venueEdit.html"));
     });
 
+    app.get("/venContact", isAuthenticated, (_req, res) => {
+        res.sendFile(path.join(__dirname, "../public/html/venContact.html"));
+    });
+
+    app.get("/bandContact", isAuthenticated, (_req, res) => {
+        res.sendFile(path.join(__dirname, "../public/html/bandContact.html"));
+    });
 };

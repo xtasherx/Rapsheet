@@ -1,11 +1,36 @@
- <div id="wrapper">
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a href="/index"><img class="logo" src="../assets/rapsheet-logo.png" alt="rapsheet logo"> </a>
 
-     <!-- Header with Logo and Navigation -->
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <a href="/index"><img class="logo" src="/public/assets/rapsheet-logo.png" alt="rapsheet logo"> </a>
-            </nav>
-        </header>
+
+        <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/bandEdit">Edit Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/allVenue">Find a Venue</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/band">Profile</a>
+                </li>
+                <a href="/logout"><button type="button" class="btn logout ml-3">Log Out</button></a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+</header>
+
+
+<body>
+    <div id="wrapper">
 
         <div class="bandIntro mt-4 mb-3 row">
             <h2 class="col-12 col-md-6 bandNameH2">{{ bandName }}</h2>
@@ -16,23 +41,20 @@
         </div>
 
 
-        <div class="bandHead js-flickity" data-flickity-options='{ "wrapAround": true, "pageDots": false, "setGallerySize": false, "autoPlay": true, "lazyLoad": true }'>
-            
+        <div class="bandHead js-flickity"
+            data-flickity-options='{ "wrapAround": true, "pageDots": false, "setGallerySize": false, "autoPlay": true, "lazyLoad": true }'>
+
             <div class="gallery-cell">
-                <img class="gallery-cell-img" src="/public/assets/paramore-1.jpg">
+                <img class="gallery-cell-img" src="../assets/paramore-1.jpg">
             </div>
             <div class="gallery-cell">
-                <img class="gallery-cell-img" src="/public/assets/paramore-3.jpg">
+                <img class="gallery-cell-img" src="../assets/paramore-3.jpg">
             </div>
             <div class="gallery-cell">
-                <img class="gallery-cell-img" src="/public/assets/paramore-4.jpg">
+                <img class="gallery-cell-img" src="../assets/paramore-4.jpg">
             </div>
-            
-            {{!-- {{#each bands}}
-                <div class="gallery-cell">
-                    <img class="gallery-cell-img" src="{{bandHead}}">
-                </div>
-            {{/each}} --}}
+
+
         </div>
 
 
@@ -57,9 +79,9 @@
 
 
             <ul class="row d-flex align-content-center flex-wrap">
-                <img class="member mx-3 my-3" src="/public/assets/paramore_haley-williams.jpg" width="200px" height="200px">
-                <img class="member mx-3 my-3" src="/public/assets/paramore_taylor-york.jpg" width="200px" height="200px">
-                <img class=" member mx-3 my-3 " src="/public/assets/paramore_zach-farro.jpg " width="200px " height="200px">
+                <img class="member mx-3 my-3" src="../assets/paramore_haley-williams.jpg" width="200px" height="200px">
+                <img class="member mx-3 my-3" src="../assets/paramore_taylor-york.jpg" width="200px" height="200px">
+                <img class=" member mx-3 my-3 " src="../assets/paramore_zach-farro.jpg " width="200px " height="200px">
             </ul>
 
             {{!-- {{#each bands}}
@@ -72,8 +94,10 @@
 
             {{#each audio}}
             <audio controls class="audio mx-3 my-3">
-                <source src="{{audioURL}}">
-                <p>Your browser doesn't support HTML5 audio. Here is a <a href="{{audioURL}}">link to the audio</a> instead.</p>
+                <source src="{{bband}}">
+                <p>Your browser doesn't support HTML5 audio. Here is a <a href="{{audioURL}}">link to the audio</a>
+                    instead.
+                </p>
             </audio>
             {{/each}}
 
@@ -95,4 +119,3 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="../js/bandProfile.js"></script>
-
