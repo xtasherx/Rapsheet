@@ -7,31 +7,31 @@ module.exports = function(sequelize, DataTypes) {
     },
     venueInfo:{
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
     },
     mediaURL: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false
+      type: DataTypes.STRING,
+      allowNull: true
     },
     venueSize: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false
+      type: DataTypes.STRING,
+      allowNull: true
     },
     rate: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false
+      type: DataTypes.STRING,
+      allowNull: true
     }
   });
   
-  //   Venue.associate = function(models) {
-  //     // We're saying that a vand should belong to a User
-  //     // A Venue can't be created without an User due to the foreign key constraint
-  //     Venue.belongsTo(models.User, {
-  //       foreignKey: {
-  //         allowNull: false
-  //       }
-  //     });
-  //   };
+  Venue.associate = function(models) {
+    // We're saying that a venue should belong to a User
+    // A Venue can't be created without an User due to the foreign key constraint
+    Venue.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
   
   return Venue;
 };

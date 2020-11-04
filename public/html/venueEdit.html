@@ -49,10 +49,10 @@
                             <a class="nav-link" href="/allVenue">Find a Venue</a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Profile</a>
+                            <a class="nav-link" href="/venue">Profile</a>
                         </li>
                         </li>
-                            <a href="/logout"><button type="button" class="btn logout ml-3">Log Out</button></a>
+                        <a href="/logout"><button type="button" class="btn logout ml-3">Log Out</button></a>
                         </li>
                     </ul>
                 </div>
@@ -85,12 +85,8 @@
 
                         <div class="form-row ">
                             <div class="form-group col-md-4 ">
-                                <label for="inputGenre ">Size</label>
-                                <input type="text " class="form-control inputGenre " id="inputGenre " placeholder="Crowd Capacity">
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label for="inputLocation ">Location</label>
-                                <input type="text " class="form-control inputLocation" id="inputLocation " placeholder="City, State ">
+                                <label for="inputCapacity">Size</label>
+                                <input type="text " class="form-control inputCapacity " id="inputCapacity " placeholder="Crowd Capacity">
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="inputRate ">Rate</label>
@@ -104,8 +100,8 @@
 
 
                         <div class="row">
-                            <button type="submit " class="btn btn-primary mt-3 mr-3" id="updateBand">Update Profile</button>
-                            <button type="submit " class="btn btn-secondary mt-3" id="updateBand">Cancel</button>
+                            <button type="submit " class="btn btn-primary mt-3 mr-3" id="updateVenue">Update Profile</button>
+                            <a href="/venue"><button type="button" class="btn cancel btn-secondary mt-3">Cancel</button></a>
                         </div>
                     </form>
 
@@ -124,7 +120,7 @@
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="../js/signup.js"></script>
+    <script type="text/javascript" src="../js/venueEdit.js"></script>
 
 
 

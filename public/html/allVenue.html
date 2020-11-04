@@ -102,7 +102,18 @@
     <footer class="shadow-lg pt-3 pb-1.5 fixed-bottom">
         <p class="text-center">&COPY; Footer</p>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $.get("/api/getVenues", (data) => {
+            console.log(data.dbUser[0].venueName);
+            const cardTitles = document.querySelectorAll(".card-title");
+            const cardText = document.querySelectorAll(".card-text");
+            cardTitles.forEach((name, i) => {
+                name.innerHTML = data.dbUser[i].venueName;
+            })
 
+        });
+    </script>
 </body>
 
 </html>
