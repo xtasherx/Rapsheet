@@ -3,7 +3,7 @@ const updateVenueBtn = document.querySelector("#updateVenue");
 
 // Does a post to the editvenueProfile route. If successful, we are redirected to the venue page
 // Otherwise we log any errors
-function editVenueProfile(id, name, size, rate, desc,p1,p2,p3,p4) {
+function editVenueProfile(id, name, size, rate,desc,p1,p2,p3,p4) {
     $.post("/api/editVenueProfile", {
             userId: id,
             venueName: name,

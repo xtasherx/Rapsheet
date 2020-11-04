@@ -87,7 +87,6 @@ module.exports = function(app) {
             include: [db.User]
         }).then((dbUser) => {
             console.log(dbUser);
-
           res.json({
             email: dbUser[0].User.email,
             address: dbUser[0].User.address,
@@ -141,7 +140,7 @@ module.exports = function(app) {
                           venueName: req.body.venueName,
                           venueSize: req.body.venueSize,
                           rate: req.body.venueRate,
-                          venueInfo: req.body.venueDesc,
+                          venueInfo: req.body.venueInfo,
                           profPic1: req.body.profPic1,
                           profPic2: req.body.profPic2,
                           profPic3: req.body.profPic3,

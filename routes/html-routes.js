@@ -74,4 +74,11 @@ module.exports = function(app) {
         res.sendFile(path.join(__dirname, "../public/html/venueEdit.html"));
     });
 
+    app.get("/venContact", isAuthenticated, (_req, res) => {
+        res.sendFile(path.join(__dirname, "../public/html/venContact.html"));
+    });
+
+    app.get("/bandContact", isAuthenticated, (_req, res) => {
+        res.sendFile(path.join(__dirname, "../public/html/bandContact.html"));
+    });
 };
