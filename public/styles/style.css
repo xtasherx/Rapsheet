@@ -27,6 +27,7 @@
     
     header {
         width: 100%;
+        height: auto;
         position: static;
         top: 0;
         z-index: 10;
@@ -45,7 +46,7 @@
     }
     
     nav .logo {
-        width: 40px;
+        width: 45%;
     }
     
     .nav-link {
@@ -366,6 +367,7 @@
             min-height: 100%;
             width: 100%;
             overflow-y: hidden;
+            top: -30%;
         }
     }
     /* Large devices (desktops, 992px and up) */
