@@ -212,6 +212,10 @@ input {
         max-height: 125px;
         justify-content: center;
     }
+    /* Modal */
+    .modal-content {
+        width: 60%;
+    }
 }
 
 
@@ -221,9 +225,16 @@ input {
     .dayCube {
         padding: 1em 0;
     }
+    .modal-content {
+        width: 40%;
+    }
 }
 
 
 /* Extra large devices (large desktops, 1200px and up) */
 
-@media (min-width: 1200px) {}
+@media (min-width: 1200px) {
+    .modal-content {
+        width: 30%;
+    }
+}

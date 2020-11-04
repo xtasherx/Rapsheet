@@ -1,5 +1,12 @@
 <div id="wrapper">
 
+    <!-- Header with Logo and Navigation -->
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a href="/index"><img class="logo" src="/public/assets/rapsheet-logo.png" alt="rapsheet logo"> </a>
+            </nav>
+        </header>
+
         <div class="bandIntro mt-4 mb-3 row">
             <h2 class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">{{ venue_ name  }}</h2>
             <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-end">
@@ -12,8 +19,20 @@
         <div class="bandHead js-flickity" data-flickity-options='{ "wrapAround": true, "pageDots": false, "setGallerySize": false, "autoPlay": true, "lazyLoad": true }'>
 
             <div class="gallery-cell">
-              <img class="gallery-cell-img" src="{{#each venue_header}}{{/each}}">
+                <img class="gallery-cell-img" src="/public/assets/luna-music-bar-1.jpg">
             </div>
+            <div class="gallery-cell">
+                <img class="gallery-cell-img" src="/public/assets/luna-music-bar-2.jpg">
+            </div>
+            <div class="gallery-cell">
+                <img class="gallery-cell-img" src="/public/assets/luna-music-bar-3.jpg">
+            </div>
+
+            {{!-- {{#each venues}}
+                <div class="gallery-cell">
+                    <img class="gallery-cell-img" src="{{venueHead}}">
+                </div>
+            {{/each}} --}}
 
         </div>
 

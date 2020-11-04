@@ -1,6 +1,6 @@
 # project2
 Name
-Rapsheet?
+Rapsheet
 
 Description
 With this application, users can create a profile under Bands or Venue, so they can utilize local information in order to determine whether the want to utilize that venue or that band. It includes a completed profile with information about the band/venue, address, contact information, reviews, photos/video, rates, and availability. 
@@ -18,6 +18,15 @@ I want to be able to advertise information about my band/availability to potenti
 So it’s easier for us to find and  book work
 
 Instructions
+1) Clone the repository to local storage.
+2) Create mySQL database named “passport_demo”
+3) Open the config folder and open the file named “config.json”
+4) Enter the correct credentials in the username/password
+5) Open terminal in the current repo
+6) Run “npm i” this will install the node packages
+7) In the terminal run “node server.js” and this should connect to the server
+8) Open web browser and type “http://localhost:8080 in nav bar
+9) Start using the application
 
 Roadmap
 Some future developments that were discussed included:

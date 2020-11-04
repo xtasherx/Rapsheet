@@ -9,6 +9,7 @@ module.exports = function(app) {
         res.json(req.user);
     });
 
+
     //  signup route 
     app.post("/api/signup", (req, res) => {
         db.User.create({
@@ -68,15 +69,15 @@ module.exports = function(app) {
                 bandPic: dbUser[0].mediaURL
             });
         });
-
-      });
+    });
     //Dgets info from venue table for the user 
-      app.get("/api/venueData/:id", (_req, res) => {
+    app.get("/api/venueData/:id", (_req, res) => {
         db.Venue.findAll({
-          where:{userId: _req.params.id},
-          include: [db.User]
+            where: { userId: _req.params.id },
+            include: [db.User]
         }).then((dbUser) => {
             console.log(dbUser);
+
           res.json({
         
             email: dbUser[0].User.email,
