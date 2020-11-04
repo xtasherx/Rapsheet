@@ -47,6 +47,11 @@ module.exports = function(app) {
         res.sendFile(path.join(__dirname, "../public/html/band.html"));
     });
 
+    app.get("/viewBand", isAuthenticated, (_req, res) => {
+        
+        res.sendFile(path.join(__dirname, "../public/html/viewBand.html"));
+    });
+
     app.get("/allVenue", isAuthenticated, (_req, res) => {
         res.sendFile(path.join(__dirname, "../public/html/allVenue.html"));
     });

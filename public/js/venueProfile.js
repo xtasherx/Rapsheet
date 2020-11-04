@@ -7,6 +7,8 @@ $.get("/api/user_data", (data) => {
   $.get("/api/venueData/" + data.id,(data) => {
     console.log(data);
     const venueName = document.querySelector(".venueName");
+    const testPhoto = document.querySelector(".testPhoto");
+    testPhoto.setAttribute("src",data.venuePic);
     venueName.innerHTML = data.venueName;
   });
 

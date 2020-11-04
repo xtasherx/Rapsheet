@@ -105,15 +105,30 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
          $.get("/api/getBands",(data) => {
-        console.log(data.dbUser[0].bandName);
+        console.log(data.dbUser);
         const cardTitles = document.querySelectorAll(".card-title");
         const cardText = document.querySelectorAll(".card-text");
+        const learnMore = document.querySelectorAll(".btn-warning");
         cardTitles.forEach((name,i) => {
             name.innerHTML=data.dbUser[i].bandName;
         })
         cardText.forEach((genre,i) => {
             genre.innerHTML=data.dbUser[i].bandGenre;
         })
+        learnMore.forEach((button,i) => {
+            // console.log(data.dbUser[i].id);
+            // button.setAttribute("data-id",data.dbUser[i].id);
+            button.addEventListener("click",() => {
+                
+                let id = data.dbUser[i].id;
+                const userIdGrab = () => {
+                    return id;
+                }
+                console.log(userIdGrab());
+                // module.exports = userIdGrab;
+                location.assign("/viewBand");
+            })
+        })    
   });
     </script>
 </body>

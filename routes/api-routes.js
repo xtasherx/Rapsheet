@@ -65,6 +65,7 @@ module.exports = function(app) {
                 bandName: dbUser[0].bandName,
                 bandBio: dbUser[0].bandBio,
                 bandGenre: dbUser[0].bandGenre,
+                bandPic: dbUser[0].mediaURL
             });
         });
 
@@ -88,10 +89,15 @@ module.exports = function(app) {
             venueName:dbUser[0].venueName,
             venueSize: dbUser[0].venueSize,
             venueRate: dbUser[0].venueRate,
-            venueDesc: dbUser[0].venueDesc
+            venueDesc: dbUser[0].venueDesc,
+            venuePic: dbUser[0].mediaURL
 
             });
         });
+    });
+    // eslint-disable-next-line no-empty-function
+    app.get("/api/viewBand/:id",(_req,res)=>{
+        res.redirect("/viewBand");
     });
 
     //edit band route
@@ -100,7 +106,8 @@ module.exports = function(app) {
                 UserId: req.body.userId,
                 bandName: req.body.bandName,
                 bandGenre: req.body.bandGenre,
-                bandBio: req.body.bandBio
+                bandBio: req.body.bandBio,
+                bandPic: req.body.mediaURL
             })
             .then(() => {
                 res.redirect(307, "/band");
@@ -117,7 +124,8 @@ module.exports = function(app) {
                           venueName: req.body.venueName,
                           venueSize: req.body.venueSize,
                           rate: req.body.venueRate,
-                          venueInfo: req.body.venueDesc
+                          venueInfo: req.body.venueDesc,
+                          venuePic: req.body.mediaURL
                       })
                       .then(() => {
                           res.redirect(307, "/venue");

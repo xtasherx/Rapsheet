@@ -41,18 +41,18 @@
 
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
             <ul class="nav">
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="/venueEdit">Edit Profile</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/allBand">Find a Band</a>
+                    <a class="nav-link" href="/allBand">Find a Venue</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="/venue">Profile</a>
                 </li>
-                <li>
-                    <a href="/logout"><button type="button" class="btn logout ml-3">Log Out</button></a>
+                <a href="/logout"><button type="button" class="btn logout ml-3">Log Out</button></a>
                 </li>
+
             </ul>
         </div>
     </nav>
@@ -64,9 +64,9 @@
     <div id="wrapper">
 
         <div class="bandIntro mt-4 mb-3 row">
-            <h2 class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 venueName">Really Long Venue Names</h2>
-            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-end">
-                <a href="/venCal"><button type="button" class="btn btn-dark mx-2">Calendar</button></a>
+            <h2 class="col bandNameH2">Really Long Band Names</h2>
+            <div class="col d-flex justify-content-end">
+                <a href="/bandCal"><button type="button" class="btn btn-dark mx-2">Schedule</button></a>
                 <a href="#"><button type="button" class="btn btn-dark mx-2">Contact</button></a>
 
             </div>
@@ -75,7 +75,7 @@
         <div class="bandHead js-flickity" data-flickity-options='{ "wrapAround": true, "pageDots": false, "setGallerySize": false, "autoPlay": true, "lazyLoad": true }'>
 
             <div class="gallery-cell">
-                <img class="gallery-cell-img testPhoto" src="../assets/live-show-header2.jpg">
+                <img class="gallery-cell-img" src="../assets/live-show-header2.jpg">
             </div>
             <div class="gallery-cell">
                 <img class="gallery-cell-img" src="../assets/live-show-header1.jpg">
@@ -89,36 +89,51 @@
 
         <div id="bandDetails">
             <ul class="row justify-content-center">
-                <li class="px-4">Size</li>
-                <li class="px-4">Location</li>
+                <li class="px-4">Genre</li>
+                <li class="px-4 bandLoc">Location</li>
                 <li class="px-4">Rate</li>
+
             </ul>
         </div>
 
         <main>
-            <div class="venueInfo row mb-5">
-                <p id="bandDesc" class="col-12 col-lg-6">
-                    Lick master's hand at first then bite because im moody love and coo around boyfriend who purrs and makes the perfect moonlight eyes so i can purr and swat the glittery gleaming yarn to him (the yarn is from a $125 sweater) howl on top of tall thing Plan
-                    your travel morning beauty routine of licking self yet rub against owner because nose is wet my cat stared at me he was sipping his tea, too, pounce on unsuspecting person yet fooled again thinking the dog likes me for sleeps on my
-                    head. Have secret plans. Jump up to edge of bath, fall in then scramble in a mad panic to get out claws in the eye of the beholder for steal mom's crouton while she is in the bathroom but with tail in the air hide at bottom of staircaseto
-                    trip human meoooow.
-                </p>
-                <img class="col-12 col-lg-5" src="https://via.placeholder.com/400x200">
+
+            <p id="bandDesc" class="col-12 col-lg-8">
+                Lick master's hand at first then bite because im moody love and coo around boyfriend who purrs and makes the perfect moonlight eyes so i can purr and swat the glittery gleaming yarn to him (the yarn is from a $125 sweater) howl on top of tall thing Plan
+                your travel morning beauty routine of licking self yet rub against owner because nose is wet my cat stared at me he was sipping his tea, too, pounce on unsuspecting person yet fooled again thinking the dog likes me for sleeps on my head.
+                Have secret plans. Jump up to edge of bath, fall in then scramble in a mad panic to get out claws in the eye of the beholder for steal mom's crouton while she is in the bathroom but with tail in the air hide at bottom of staircaseto trip
+                human meoooow.
+            </p>
+
+            <h4 class="mt-5">Members</h4>
+
+            <ul class="row d-flex align-content-center flex-wrap">
+                <img class="member mx-3 my-3" src="https://via.placeholder.com/150">
+                <img class="member mx-3 my-3" src="https://via.placeholder.com/150">
+                <img class="member mx-3 my-3" src="https://via.placeholder.com/150">
+                <img class="member mx-3 my-3" src="https://via.placeholder.com/150">
+            </ul>
+
+            <h4 class="mt-5">Audio</h4>
+
+            <audio controls class="audio mx-3 my-3">
+            <source src="viper.mp3" type="audio/mp3">
+            <p>Your browser doesn't support HTML5 audio. Here is a <a href="viper.mp3">link to the audio</a> instead.</p>
+        </audio>
+
+            <audio controls class="audio mx-2 my-3">
+            <source src="viper.mp3" type="audio/mp3">
+            <p>Your browser doesn't support HTML5 audio. Here is a <a href="viper.mp3">link to the audio</a> instead.</p>
+        </audio>
+
+            <h4 class="mt-5">Video</h4>
+
+            <div class="videos row d-flex align-content-center flex-wrap">
+                <img class="member mx-3 my-2" src="https://via.placeholder.com/300x150">
+                <img class="member mx-3 my-2" src="https://via.placeholder.com/300x150">
             </div>
 
-            <section class="related">
-                <h4 class="mt-5 text-center">Related</h4>
-                <div class="row col-12 justify-content-center"></div>
-                <ul class="row d-flex justify-content-center flex-wrap">
-                    <img class="member mx-3 my-3" src="https://via.placeholder.com/150">
-                    <img class="member mx-3 my-3" src="https://via.placeholder.com/150">
-                    <img class="member mx-3 my-3" src="https://via.placeholder.com/150">
-                    <img class="member mx-3 my-3" src="https://via.placeholder.com/150">
-                </ul>
-    </div>
-    </section>
-
-    </main>
+        </main>
     </div>
 
     <!-- Footer -->
@@ -126,7 +141,15 @@
         <p class="text-center">&COPY; Footer</p>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="../js/venueProfile.js"></script>
+    <script >
+         $.get("/api/bandData/" + data.id, (data) => {
+            console.log(data);
+            //just an example of how the object is working for when handlebars gets implemented.
+            const nameHeader = document.querySelector(".bandNameH2");
+            nameHeader.innerHTML = data.bandName;
+  });
+
+    </script>
 </body>
 
 </html>
