@@ -1,1 +1,64 @@
-<h1>Hello World</h1>
+ <div id="wrapper">
+
+        <div class="bandIntro mt-4 mb-3 row">
+            <h2 class="col">{{ band_name }}</h2>
+            <div class="col d-flex justify-content-end">
+                <a href="/bandCal"><button type="button" class="btn btn-dark mx-2">Schedule</button></a>
+                <a href="#"><button type="button" class="btn btn-dark mx-2">Contact</button></a>
+
+            </div>
+        </div>
+
+        <div class="bandHead js-flickity" data-flickity-options='{ "wrapAround": true, "pageDots": false, "setGallerySize": false, "autoPlay": true, "lazyLoad": true }'>
+
+            <div class="gallery-cell">
+                <img class="gallery-cell-img" src="{{#each band_header}}{{/each}}">
+            </div>
+
+        </div>
+
+
+        <div id="bandDetails">
+            <ul class="row justify-content-center">
+                <li class="px-4">Genre: {{ genre }}</li>
+                <li class="px-4 bandLoc">Location: {{ location }}</li>
+                <li class="px-4">Rate<: {{ rate }}/li>
+
+            </ul>
+        </div>
+
+        <main>
+
+            <p id="bandDesc" class="col-12 col-lg-8">
+                {{ bio }}
+            </p>
+
+            <h4 class="mt-5">Members</h4>
+
+            <ul class="row d-flex align-content-center flex-wrap">
+                <img class="member mx-3 my-3" src="{{#each band_member}}{{/each}}">
+            </ul>
+
+            <h4 class="mt-5">Audio</h4>
+
+            <audio controls class="audio mx-3 my-3">
+                <source src="{{#each audio}}{{/each}}">
+                <p>Your browser doesn't support HTML5 audio. Here is a <a href="viper.mp3">link to the audio</a> instead.</p>
+            </audio>
+
+            <h4 class="mt-5">Video</h4>
+
+            <div class="videos row d-flex align-content-center flex-wrap">
+                <source src="{{#each video}}{{/each}}">
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="shadow-lg pt-3 pb-1.5 fixed-bottom">
+        <p class="text-center">&COPY; Footer</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../js/bandProfile.js"></script>
