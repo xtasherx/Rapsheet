@@ -2,7 +2,7 @@
 
 ## Description
 With this application, users can create a profile under Bands or Venue, so they can utilize local information in order to determine whether the want to utilize that venue or that band. It includes a completed profile with information about the band/venue, address, contact information, reviews, photos/video, rates, and availability. 
-
+View the site here [Rapsheet](https://infinite-journey-37798.herokuapp.com/)
 - - - 
 
 ## User Stories
