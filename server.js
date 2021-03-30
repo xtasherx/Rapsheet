@@ -4,7 +4,7 @@ const express = require("express");
 const session = require("express-session");
 const passport = require("./config/passport");
 const exphbs = require("express-handlebars");
-
+const compression = require('compression');
 
 const PORT = process.env.PORT || 8080;
 const db = require("./models");
@@ -17,6 +17,7 @@ app.use(express.static("public"));
 app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(compression({ filter: shouldCompress }));
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
@@ -24,7 +25,16 @@ app.set("view engine", "handlebars");
 // routes 
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
-
+//filtering for compression
+function shouldCompress (req, res) {
+    if (req.headers["x-no-compression"]) {
+      // don't compress responses with this request header
+      return false;
+    }
+   
+    // fallback to standard filter function
+    return compression.filter(req, res)
+  }
 // Syncing our database
 db.sequelize.sync().then(() => {
     app.listen(PORT, () => {
